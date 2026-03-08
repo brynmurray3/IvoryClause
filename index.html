@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IvoryClause — Wedding Vendor Contracts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fefbf6;
+    --black: #24252a;
+    --red:   #d25845;
+    --gray:  rgba(36,37,42,0.38);
+  }
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+background: var(–cream);
+color: var(–black);
+font-family: ‘DM Mono’, monospace;
+}
+
+/* ── HEADER ── */
+header {
+background: var(–cream);
+padding: 32px 60px 24px;
+text-align: center;
+border-bottom: 1px solid rgba(36,37,42,0.07);
+}
+
+.logo { height: 56px; width: auto; display: block; margin: 0 auto 10px; }
+
+.tagline {
+font-size: 0.6rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–gray);
+}
+
+nav {
+display: flex;
+justify-content: center;
+gap: 40px;
+margin-top: 20px;
+}
+
+nav a {
+font-size: 0.56rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–gray);
+text-decoration: none;
+transition: color 0.2s;
+}
+nav a:hover { color: var(–black); }
+
+/* ── HERO ── */
+.hero {
+text-align: center;
+padding: 80px 40px 72px;
+max-width: 680px;
+margin: 0 auto;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.2rem, 5vw, 3.4rem);
+line-height: 1.15;
+margin-bottom: 18px;
+color: var(–black);
+}
+.hero h1 em { font-style: italic; color: var(–red); }
+
+.hero p {
+font-size: 0.65rem;
+color: var(–gray);
+letter-spacing: 0.06em;
+line-height: 2;
+margin-bottom: 40px;
+}
+
+.btn {
+display: inline-block;
+background: var(–black);
+color: var(–cream);
+font-family: ‘DM Mono’, monospace;
+font-size: 0.58rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+padding: 14px 32px;
+border-radius: 2px;
+text-decoration: none;
+transition: background 0.2s;
+}
+.btn:hover { background: #3a3b40; }
+
+/* ── DIVIDER ── */
+.divider {
+width: 40px;
+height: 1px;
+background: rgba(36,37,42,0.15);
+margin: 0 auto;
+}
+
+/* ── VENDORS ── */
+.vendors {
+padding: 72px 40px;
+max-width: 960px;
+margin: 0 auto;
+text-align: center;
+}
+
+.section-label {
+font-size: 0.52rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+color: var(–red);
+margin-bottom: 36px;
+}
+
+.vendor-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 12px;
+}
+
+.vendor-card {
+background: white;
+border: 1px solid rgba(36,37,42,0.07);
+border-radius: 3px;
+padding: 26px 20px;
+text-align: left;
+text-decoration: none;
+display: block;
+transition: border-color 0.2s, transform 0.2s;
+}
+.vendor-card:hover {
+border-color: var(–red);
+transform: translateY(-2px);
+}
+
+.vendor-icon { font-size: 1.3rem; margin-bottom: 12px; display: block; }
+
+.vendor-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+color: var(–black);
+margin-bottom: 6px;
+}
+
+.vendor-desc {
+font-size: 0.55rem;
+color: var(–gray);
+letter-spacing: 0.03em;
+line-height: 1.9;
+margin-bottom: 14px;
+}
+
+.vendor-price {
+font-size: 0.5rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–red);
+}
+
+/* ── HOW ── */
+.how {
+padding: 72px 40px;
+max-width: 760px;
+margin: 0 auto;
+text-align: center;
+border-top: 1px solid rgba(36,37,42,0.07);
+}
+
+.steps {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+margin-top: 40px;
+}
+
+.step-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 2.4rem;
+color: rgba(36,37,42,0.08);
+margin-bottom: 10px;
+}
+
+.step-title {
+font-size: 0.65rem;
+letter-spacing: 0.06em;
+color: var(–black);
+margin-bottom: 8px;
+}
+
+.step-desc {
+font-size: 0.56rem;
+color: var(–gray);
+letter-spacing: 0.03em;
+line-height: 1.9;
+}
+
+/* ── PRICING ── */
+.pricing {
+padding: 72px 40px;
+max-width: 420px;
+margin: 0 auto;
+text-align: center;
+border-top: 1px solid rgba(36,37,42,0.07);
+}
+
+.price-amount {
+font-family: ‘Playfair Display’, serif;
+font-size: 3.8rem;
+color: var(–black);
+line-height: 1;
+margin: 20px 0 6px;
+}
+.price-amount sup { font-size: 1.4rem; vertical-align: super; color: var(–red); }
+
+.price-note {
+font-size: 0.54rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–gray);
+margin-bottom: 32px;
+}
+
+.features {
+list-style: none;
+text-align: left;
+margin-bottom: 32px;
+}
+.features li {
+font-size: 0.6rem;
+color: var(–gray);
+letter-spacing: 0.04em;
+padding: 9px 0;
+border-bottom: 1px solid rgba(36,37,42,0.05);
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.features li::before { content: ‘♥’; color: var(–red); font-size: 0.55rem; opacity: 0.7; }
+
+/* ── FOOTER ── */
+footer {
+border-top: 1px solid rgba(36,37,42,0.07);
+padding: 28px 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.footer-logo { height: 28px; width: auto; opacity: 0.4; }
+
+.footer-note {
+font-size: 0.48rem;
+color: var(–gray);
+letter-spacing: 0.05em;
+opacity: 0.6;
+max-width: 480px;
+line-height: 1.9;
+}
+
+@media(max-width: 600px) {
+header, footer { padding-left: 24px; padding-right: 24px; }
+.hero, .vendors, .how, .pricing { padding-left: 24px; padding-right: 24px; }
+.steps { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <img src="logo.png" alt="IvoryClause" class="logo" />
+  <div class="tagline">Contracts designed for wedding professionals.</div>
+  <nav>
+    <a href="#vendors">Contracts</a>
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<div class="hero">
+  <h1>Your business, <em>protected.</em><br>Your clients, impressed.</h1>
+  <p>Attorney-reviewed contracts for every wedding vendor.<br>Fill out a form. Download a PDF. Done in minutes.</p>
+  <a href="#vendors" class="btn">Browse Contracts</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- VENDORS -->
+
+<div class="vendors" id="vendors">
+  <div class="section-label">Choose your contract</div>
+  <div class="vendor-grid">
+    <a href="contract.html?type=photographer" class="vendor-card">
+      <span class="vendor-icon">📷</span>
+      <div class="vendor-name">Photographer</div>
+      <div class="vendor-desc">Deliverables, licensing, cancellation, retainer, and usage rights.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=florist" class="vendor-card">
+      <span class="vendor-icon">🌸</span>
+      <div class="vendor-name">Florist</div>
+      <div class="vendor-desc">Arrangements, substitution policy, deposits, and delivery terms.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=hair-makeup" class="vendor-card">
+      <span class="vendor-icon">💄</span>
+      <div class="vendor-name">Hair & Makeup</div>
+      <div class="vendor-desc">Trial sessions, travel fees, timelines, and touch-up services.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=dj" class="vendor-card">
+      <span class="vendor-icon">🎵</span>
+      <div class="vendor-name">DJ</div>
+      <div class="vendor-desc">Setlist, equipment, overtime, setup time, and sound requirements.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=planner" class="vendor-card">
+      <span class="vendor-icon">📋</span>
+      <div class="vendor-name">Wedding Planner</div>
+      <div class="vendor-desc">Scope of services, vendor coordination, timelines, and fees.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=venue" class="vendor-card">
+      <span class="vendor-icon">🏛️</span>
+      <div class="vendor-name">Venue</div>
+      <div class="vendor-desc">Capacity, catering policies, exclusivity, and damage deposits.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=caterer" class="vendor-card">
+      <span class="vendor-icon">🍽️</span>
+      <div class="vendor-name">Caterer</div>
+      <div class="vendor-desc">Menu, headcount, dietary restrictions, staffing, and gratuity.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+    <a href="contract.html?type=officiant" class="vendor-card">
+      <span class="vendor-icon">💍</span>
+      <div class="vendor-name">Officiant</div>
+      <div class="vendor-desc">Ceremony customization, legal filing, rehearsal, and contingencies.</div>
+      <div class="vendor-price">$119.99 — Instant download</div>
+    </a>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+
+<div class="how" id="how">
+  <div class="section-label">How it works</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Choose your type</div>
+      <div class="step-desc">Pick from 8 contract types built for wedding professionals.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Fill out the form</div>
+      <div class="step-desc">Answer plain-English questions about your services and policies.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Download your PDF</div>
+      <div class="step-desc">Pay $119.99 and get your personalized contract instantly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+
+<div class="pricing" id="pricing">
+  <div class="section-label">Pricing</div>
+  <div class="price-amount"><sup>$</sup>19.99</div>
+  <div class="price-note">Per contract · No subscription · Yours forever</div>
+  <ul class="features">
+    <li>Fully personalized to your business</li>
+    <li>Attorney-reviewed contract language</li>
+    <li>Instant PDF download</li>
+    <li>Print or send digitally</li>
+    <li>Wedding-specific legal clauses</li>
+  </ul>
+  <a href="#vendors" class="btn">Choose Your Contract</a>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <img src="logo.png" alt="IvoryClause" class="footer-logo" />
+  <div class="footer-note">
+    IvoryClause provides contract templates for informational purposes only and is not a substitute for personalized legal advice. © 2026 IvoryClause.
+  </div>
+</footer>
+
+</body>
+</html>
