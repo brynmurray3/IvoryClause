@@ -338,10 +338,10 @@ footer {
   border-top: 1px solid var(--line);
   margin-top: 52px;
 }
-.how-step { padding: 52px 48px 52px 0; border-right: 1px solid var(--line); }
-.how-step:last-child { border-right: none; padding-right: 0; }
-.how-step:not(:first-child) { padding-left: 48px; }
-.how-step-num {
+.steps .step { padding: 52px 48px 52px 0; border-right: 1px solid var(--line); }
+.steps .step:last-child { border-right: none; padding-right: 0; }
+.steps .step:not(:first-child) { padding-left: 48px; }
+.step-num {
   font-family: 'MeshedDisplay', serif;
   font-size: 4rem;
   color: #ff4500;
@@ -349,7 +349,7 @@ footer {
   margin-bottom: 24px;
   opacity: 0.7;
 }
-.how-step-title {
+.step-title {
   font-family: 'Syne', sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -358,7 +358,7 @@ footer {
   letter-spacing: 0.04em;
   font-weight: 600;
 }
-.how-step-desc {
+.step-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
@@ -915,7 +915,7 @@ select {
   .vendors, .how, .pricing { padding: 60px 24px; }
   .vendor-grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr; }
-  .how-step, .how-step:not(:first-child) {
+  .steps .step, .steps .step:not(:first-child) {
     padding: 36px 0;
     border-right: none;
     border-bottom: 1px solid var(--line);
