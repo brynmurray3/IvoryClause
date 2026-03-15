@@ -1,932 +1,816 @@
-/* ============================================================
-   IVORYCLAUSE — SHARED DESIGN SYSTEM
-   style.css — link from every HTML file:
-   <link rel="stylesheet" href="/style.css">
-   ============================================================ */
+<!DOCTYPE html>
 
-/* ── GOOGLE FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photographer Contract — IvoryClause</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body style="background:#f5f0e8 !important; color:#1a1a1a !important;">
 
-/* ── CUSTOM FONT ── */
-@font-face {
-  font-family: 'MeshedDisplay';
-  src: url('/MeshedDisplay-MediumSlanted.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+<!-- HEADER -->
 
-/* ── TOKENS ── */
-:root {
-  --ivory: #f5f0e8;
-  --black: #1a1a1a;
-  --orange: #ff4500;
-  --line: rgba(26,26,26,0.1);
-  --line-light: rgba(26,26,26,0.06);
-  --error: #c0392b;
-  color-scheme: light only;
-}
+<header>
+  <a href="/" class="wordmark">IvoryClause</a>
+  <a href="/" class="back-link">← All Contracts</a>
+</header>
 
-/* ── RESET ── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-a { color: inherit; text-decoration: none; }
-html, body {
-  background: #f5f0e8 !important;
-  color: #1a1a1a !important;
-  min-height: 100vh;
-}
+<!-- PROGRESS BAR -->
 
-/* ============================================================
-   SHARED COMPONENTS
-   ============================================================ */
+<div class="progress-bar-wrap">
+  <div class="progress-meta">
+    <div class="progress-left">
+      <div class="progress-label" id="progressLabel">Your Business</div>
+      <div class="progress-commentary" id="progressCommentary">Let's start with the basics.</div>
+    </div>
+    <div class="progress-right">
+      <span class="progress-count" id="progressCount">Step 1 of 5</span>
+      <div class="progress-pct" id="progressPct">20%</div>
+    </div>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
 
-/* ── HEADER (homepage — large wordmark) ── */
-header {
-  background: #f5f0e8 !important;
-  padding: 28px 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.wordmark {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(3.2rem, 6vw, 5rem);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  text-decoration: none !important;
-}
-nav { display: flex; gap: 40px; align-items: center; }
-nav a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  text-decoration: none;
-  font-weight: 600;
-}
-nav a:hover { color: #ff4500 !important; }
-.nav-cta { color: #ff4500 !important; }
+<!-- FORM -->
 
-/* ── FOOTER ── */
-footer {
-  background: #f5f0e8 !important;
-  padding: 32px 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-top: 1px solid var(--line);
-}
-.footer-wordmark {
-  font-family: 'MeshedDisplay', serif;
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #ff4500;
-  opacity: 0.4;
-}
-.footer-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  max-width: 500px;
-  line-height: 2;
-  font-weight: 500;
-}
+<div class="form-main wizard">
 
-/* ── BUTTONS ── */
-.btn-primary {
-  display: inline-block;
-  background: #ff4500 !important;
-  color: #f5f0e8 !important;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 18px 44px;
-  text-decoration: none !important;
-  font-weight: 600;
-}
-.btn-dark {
-  display: block;
-  background: #1a1a1a !important;
-  color: #f5f0e8 !important;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 18px 36px;
-  text-decoration: none !important;
-  text-align: center;
-  font-weight: 600;
-}
-.btn-dark:hover { background: #ff4500 !important; }
+  <!-- ══════════════ STEP 1: YOUR BUSINESS ══════════════ -->
 
-/* ── SECTION LABELS ── */
-.section-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ff4500;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-.section-title {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(2.5rem, 4vw, 3.8rem);
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  margin-bottom: 52px;
-}
+  <div class="step active" id="step-1">
+    <div class="step-eyebrow">Photographer Contract</div>
+    <div class="step-title">Your<br>Business</div>
+    <div class="step-subtitle">Tell us about you — this goes on the contract as the service provider.</div>
 
-/* ============================================================
-   HOME PAGE
-   ============================================================ */
+    <div class="field-row">
+      <div class="field-group">
+        <label for="photoName">Your Full Name</label>
+        <input type="text" id="photoName" placeholder="Jane Doe">
+      </div>
+      <div class="field-group">
+        <label for="bizName">Business Name <span class="label-hint">if different</span></label>
+        <input type="text" id="bizName" placeholder="Jane Doe Photography">
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="photoEmail">Your Email</label>
+        <input type="email" id="photoEmail" placeholder="jane@janedoephoto.com">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label for="photoStreet">Street Address</label>
+        <input type="text" id="photoStreet" placeholder="123 Main St">
+      </div>
+      <div class="field-group">
+        <label for="photoApt">Apt / Unit <span class="label-hint">optional</span></label>
+        <input type="text" id="photoApt" placeholder="Apt 2B">
+      </div>
+    </div>
+    <div class="field-row third">
+      <div class="field-group">
+        <label for="photoCity">City</label>
+        <input type="text" id="photoCity" placeholder="Nashville">
+      </div>
+      <div class="field-group">
+        <label for="photoAddrState">State</label>
+        <select id="photoAddrState">
+          <option value="">Select…</option>
+          <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+          <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+          <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+          <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+          <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+          <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+          <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+          <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+          <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+          <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+          <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+          <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+          <option>Wisconsin</option><option>Wyoming</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="photoZip">Zip Code</label>
+        <input type="text" id="photoZip" placeholder="37201" maxlength="10">
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="photoState">Governing State</label>
+        <select id="photoState">
+          <option value="">Select state…</option>
+          <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+          <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+          <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+          <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+          <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+          <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+          <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+          <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+          <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+          <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+          <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+          <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+          <option>Wisconsin</option><option>Wyoming</option>
+        </select>
+        <div class="field-note">The state whose laws govern this contract. Usually where you're based.</div>
+      </div>
+    </div>
 
-/* ── HERO ── */
-.hero {
-  padding: 80px 64px 100px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.hero-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ff4500;
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-weight: 600;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: #ff4500;
-}
-.hero-headline {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(3rem, 6vw, 6.5rem);
-  line-height: 0.9;
-  text-transform: uppercase;
-  color: #ff4500 !important;
-  letter-spacing: 0.01em;
-  margin-bottom: 56px;
-}
-.hero-bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 60px;
-  padding-top: 48px;
-  border-top: 1px solid var(--line);
-}
-.hero-sub { max-width: 460px; }
-.hero-sub-orange {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ff4500;
-  display: block;
-  margin-bottom: 16px;
-  font-weight: 600;
-  line-height: 1.7;
-}
-.hero-sub-black {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  display: block;
-  line-height: 2;
-  font-weight: 500;
-}
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-  flex-shrink: 0;
-}
-.hero-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  text-align: right;
-  font-weight: 500;
-}
-.hero-note span { color: #ff4500; }
+    <div class="step-nav">
+      <div class="nav-spacer"></div>
+      <span id="errStep1" class="error-msg">Please fill in all required fields.</span>
+      <button class="btn-next" onclick="goNext(1)">Continue →</button>
+    </div>
+  </div>
 
-/* ── TICKER ── */
-.ticker {
-  padding: 18px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.ticker-inner { display: inline-flex; animation: ticker 28s linear infinite; }
-.ticker-item {
-  font-family: 'Syne', sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #1a1a1a;
-  padding: 0 32px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  font-weight: 600;
-}
-.ticker-item::after { content: '✦'; font-size: 0.5rem; color: #ff4500; }
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+  <!-- ══════════════ STEP 2: CLIENT INFO ══════════════ -->
 
-/* ── VENDORS ── */
-.vendors {
-  padding: 96px 64px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.vendor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-.vendor-card {
-  padding: 36px 28px 30px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  text-decoration: none !important;
-  display: block;
-  transition: background 0.22s;
-  background: #f5f0e8 !important;
-  color: #1a1a1a !important;
-}
-.vendor-card:hover { background: #fff5f1 !important; }
-.vendor-card:hover .vendor-name { color: #ff4500 !important; }
-.vendor-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: #1a1a1a !important;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.vendor-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  margin-bottom: 12px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-  transition: color 0.22s;
-}
-.vendor-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 1.8;
-  font-weight: 500;
-  margin-bottom: 22px;
-}
-.vendor-price {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #ff4500;
-  font-weight: 500;
-}
+  <div class="step" id="step-2">
+    <div class="step-eyebrow">Photographer Contract</div>
+    <div class="step-title">Client<br>Info</div>
+    <div class="step-subtitle">Who are you shooting for? This is the couple or client hiring you.</div>
 
-/* ── HOW IT WORKS ── */
-.how {
-  padding: 96px 64px;
-  border-top: 1px solid var(--line);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  margin-top: 52px;
-}
-.step { padding: 52px 48px 52px 0; border-right: 1px solid var(--line); }
-.step:last-child { border-right: none; padding-right: 0; }
-.step:not(:first-child) { padding-left: 48px; }
-.step-num {
-  font-family: 'MeshedDisplay', serif;
-  font-size: 4rem;
-  color: #ff4500;
-  line-height: 1;
-  margin-bottom: 24px;
-  opacity: 0.7;
-}
-.step-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  margin-bottom: 14px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-}
-.step-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 1.9;
-  font-weight: 500;
-}
+    <div class="field-row">
+      <div class="field-group">
+        <label for="client1">Client 1 — Full Name</label>
+        <input type="text" id="client1" placeholder="Alex Rivera">
+      </div>
+      <div class="field-group">
+        <label for="client2">Client 2 — Full Name <span class="label-hint">if applicable</span></label>
+        <input type="text" id="client2" placeholder="Jordan Rivera">
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="clientEmail">Client Email</label>
+        <input type="email" id="clientEmail" placeholder="alex@email.com">
+      </div>
+    </div>
 
-/* ── PRICING ── */
-.pricing {
-  padding: 96px 64px;
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 96px;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.pricing-headline {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(2.5rem, 4vw, 3.8rem);
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  margin: 16px 0 28px;
-}
-.pricing-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 2;
-  font-weight: 500;
-  margin-bottom: 36px;
-}
-.attorney-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--line);
-  padding: 12px 18px;
-}
-.attorney-badge-dot {
-  width: 6px;
-  height: 6px;
-  background: #ff4500;
-  border-radius: 50%;
-}
-.attorney-badge-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  font-weight: 500;
-}
-.pricing-right { border: 1px solid var(--line); padding: 52px; }
-.price-amount {
-  font-family: 'MeshedDisplay', serif;
-  font-size: 5.5rem;
-  color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.01em;
-}
-.price-amount sup { font-size: 2rem; color: #ff4500; vertical-align: super; }
-.price-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  margin: 8px 0 40px;
-  font-weight: 500;
-}
-.features { list-style: none; margin-bottom: 40px; }
-.features li {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  font-weight: 500;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-.features li::before { content: '—'; color: #ff4500; flex-shrink: 0; }
+    <div class="field-section">Wedding Details</div>
 
-/* ============================================================
-   CONTRACT WIZARD
-   ============================================================ */
+    <div class="field-row">
+      <div class="field-group">
+        <label for="weddingDate">Wedding Date</label>
+        <input type="date" id="weddingDate">
+      </div>
+      <div class="field-group">
+        <label for="ceremonyHour">Ceremony Start Time</label>
+        <div class="time-row">
+          <select id="ceremonyHour">
+            <option value="">Hour</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9</option><option>10</option><option>11</option><option>12</option>
+          </select>
+          <select id="ceremonyMin">
+            <option value="">Min</option>
+            <option>00</option><option>15</option><option>30</option><option>45</option>
+          </select>
+          <select id="ceremonyAmPm">
+            <option value="">—</option>
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="venueName">Venue Name</label>
+        <input type="text" id="venueName" placeholder="The Grand Barn at Willow Creek">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label for="venueStreet">Venue Street Address</label>
+        <input type="text" id="venueStreet" placeholder="456 Venue Rd">
+      </div>
+      <div class="field-group">
+        <label for="venueApt">Suite / Unit <span class="label-hint">optional</span></label>
+        <input type="text" id="venueApt" placeholder="Suite 100">
+      </div>
+    </div>
+    <div class="field-row third">
+      <div class="field-group">
+        <label for="venueCity">City</label>
+        <input type="text" id="venueCity" placeholder="Nashville">
+      </div>
+      <div class="field-group">
+        <label for="venueAddrState">State</label>
+        <select id="venueAddrState">
+          <option value="">Select…</option>
+          <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+          <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+          <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+          <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+          <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+          <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+          <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+          <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+          <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+          <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+          <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+          <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+          <option>Wisconsin</option><option>Wyoming</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="venueZip">Zip Code</label>
+        <input type="text" id="venueZip" placeholder="37201" maxlength="10">
+      </div>
+    </div>
 
-/* ── HEADER (contract — small wordmark) ── */
-.contract-header {
-  background: #f5f0e8 !important;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 200;
-}
-.contract-header .wordmark {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-}
-.back-link {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  transition: color 0.18s;
-}
-.back-link:hover { color: #1a1a1a !important; }
+    <div class="step-nav">
+      <button class="btn-back" onclick="goBack(2)">← Back</button>
+      <div class="nav-spacer"></div>
+      <span id="errStep2" class="error-msg">Please fill in all required fields.</span>
+      <button class="btn-next" onclick="goNext(2)">Continue →</button>
+    </div>
+  </div>
 
-/* ── PROGRESS BAR ── */
-.progress-bar-wrap {
-  padding: 24px 56px 20px;
-  background: #f5f0e8;
-  border-bottom: 1px solid var(--line);
-}
-.progress-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 12px;
-}
-.progress-left { display: flex; flex-direction: column; gap: 4px; }
-.progress-label {
-  font-family: 'Syne', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #1a1a1a;
-}
-.progress-commentary {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 300;
-  font-style: italic;
-  color: #1a1a1a;
-  transition: opacity 0.3s;
-}
-.progress-right { text-align: right; }
-.progress-count {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  display: block;
-  margin-bottom: 2px;
-}
-.progress-pct {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #ff4500;
-  letter-spacing: -0.02em;
-}
-.progress-track {
-  height: 4px;
-  background: var(--line);
-  position: relative;
-}
-.progress-fill {
-  height: 100%;
-  background: #ff4500;
-  transition: width 0.4s ease;
-  width: 20%;
-}
+  <!-- ══════════════ STEP 3: YOUR SERVICES ══════════════ -->
 
-/* ── FORM MAIN ── */
-.form-main {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 52px 40px 120px;
-}
+  <div class="step" id="step-3">
+    <div class="step-eyebrow">Photographer Contract</div>
+    <div class="step-title">Your<br>Services</div>
+    <div class="step-subtitle">What exactly are you providing? Be specific — this is what gets put in the contract.</div>
 
-/* ── WIZARD STEP ── */
-/* Note: .step class is shared — on home page it's used for "how it works"
-   steps, on contract page it's the wizard steps. The JS adds .active.
-   The contract wizard wraps steps in a parent with class .wizard so
-   we scope the animation/show/hide to that context. */
-.wizard .step { display: none; animation: fadeUp 0.35s ease both; }
-.wizard .step.active { display: block; }
+    <div class="field-row">
+      <div class="field-group">
+        <label for="coverageHours">Coverage Hours</label>
+        <input type="number" id="coverageHours" placeholder="8" min="1" max="24">
+        <div class="field-note">Total hours of photography coverage on the wedding day.</div>
+      </div>
+      <div class="field-group">
+        <label for="servicesIncluded">Services Included</label>
+        <input type="text" id="servicesIncluded" placeholder="Ceremony, cocktail hour, reception">
+        <div class="field-note">List all the parts of the day you'll be photographing.</div>
+      </div>
+    </div>
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>Second Shooter</label>
+      <div class="radio-group inline radio-group-wrap" id="secondShooterWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'secondShooter','yes')">
+          <input type="radio" name="secondShooter" value="yes">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Yes, included</span>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'secondShooter','no')">
+          <input type="radio" name="secondShooter" value="no">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Not included</span>
+        </label>
+      </div>
+    </div>
 
-.step-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #ff4500;
-  margin-bottom: 10px;
-}
-.step-subtitle {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 300;
-  color: #1a1a1a;
-  line-height: 1.7;
-  margin-bottom: 44px;
-  max-width: 560px;
-}
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>Engagement Session</label>
+      <div class="radio-group inline radio-group-wrap" id="engagementWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'engagement','yes'); toggleConditional('engagementDetails', true)">
+          <input type="radio" name="engagement" value="yes">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Yes, included</span>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'engagement','no'); toggleConditional('engagementDetails', false)">
+          <input type="radio" name="engagement" value="no">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Not included</span>
+        </label>
+      </div>
+      <div class="conditional-field" id="engagementDetails">
+        <div class="field-row">
+          <div class="field-group">
+            <label for="engDate">Engagement Date</label>
+            <input type="date" id="engDate">
+          </div>
+          <div class="field-group">
+            <label for="engTime">Time</label>
+            <div class="time-row">
+              <select id="engHour"><option value="">Hour</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+              <select id="engMin"><option value="">Min</option><option>00</option><option>15</option><option>30</option><option>45</option></select>
+              <select id="engAmPm"><option value="">—</option><option>AM</option><option>PM</option></select>
+            </div>
+          </div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group">
+            <label for="engLocation">Location</label>
+            <input type="text" id="engLocation" placeholder="Centennial Park, Nashville, TN">
+          </div>
+        </div>
+      </div>
+    </div>
 
-/* ── FIELD SECTION DIVIDER ── */
-.field-section {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 36px 0 28px;
-  color: rgba(26,26,26,0.35);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-.field-section::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    <div class="field-section">Deliverables</div>
 
-/* ── FORM FIELDS ── */
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-.field-row.single { grid-template-columns: 1fr; }
-.field-row.third { grid-template-columns: 1fr 1fr 1fr; }
-.field-group { display: flex; flex-direction: column; gap: 7px; }
+    <div class="field-row">
+      <div class="field-group">
+        <label for="numImages">Edited Images</label>
+        <input type="number" id="numImages" placeholder="400" min="1">
+        <div class="field-note">Minimum number of edited images delivered.</div>
+      </div>
+      <div class="field-group">
+        <label for="deliveryWeeks">Delivery Timeframe</label>
+        <input type="number" id="deliveryWeeks" placeholder="6" min="1">
+        <div class="field-note">Weeks after the wedding to deliver the final gallery.</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label for="deliveryMethod">Delivery Method</label>
+        <input type="text" id="deliveryMethod" placeholder="Online gallery via Pixieset">
+        <div class="field-note">How you'll send the finished images to your client.</div>
+      </div>
+      <div class="field-group">
+        <label for="groupPhotoMinutes">Wedding Party Photos</label>
+        <input type="number" id="groupPhotoMinutes" placeholder="30" min="1">
+        <div class="field-note">Minutes reserved for wedding party group shots.</div>
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="familyPhotoMinutes">Family Formal Photos</label>
+        <input type="number" id="familyPhotoMinutes" placeholder="20" min="1">
+        <div class="field-note">Minutes reserved for immediate family portraits (parents, siblings, etc.).</div>
+      </div>
+    </div>
 
-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-}
-label .label-hint {
-  font-weight: 300;
-  text-transform: none;
-  letter-spacing: 0;
-  color: #1a1a1a;
-  font-size: 0.68rem;
-  margin-left: 6px;
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>Raw Files</label>
+      <div class="radio-group inline radio-group-wrap" id="rawFilesWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'rawFiles','yes')">
+          <input type="radio" name="rawFiles" value="yes">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Provided to client</span>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'rawFiles','no')">
+          <input type="radio" name="rawFiles" value="no">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Not provided</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-back" onclick="goBack(3)">← Back</button>
+      <div class="nav-spacer"></div>
+      <span id="errStep3" class="error-msg">Please fill in all required fields.</span>
+      <button class="btn-next" onclick="goNext(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ STEP 4: YOUR POLICIES ══════════════ -->
+
+  <div class="step" id="step-4">
+    <div class="step-eyebrow">Photographer Contract</div>
+    <div class="step-title">Your<br>Policies</div>
+    <div class="step-subtitle">Payment, cancellation, and travel terms. This is where you protect yourself.</div>
+
+    <div class="field-section">Payment</div>
+
+    <div class="field-row third">
+      <div class="field-group">
+        <label for="retainer">Retainer</label>
+        <input type="number" id="retainer" placeholder="500" min="0">
+        <div class="field-note">Deposit amount due at signing ($).</div>
+      </div>
+      <div class="field-group">
+        <label for="remainingBalance">Remaining Balance</label>
+        <input type="number" id="remainingBalance" placeholder="2500" min="0">
+        <div class="field-note">Amount due before the wedding ($).</div>
+      </div>
+      <div class="field-group">
+        <label for="totalPrice">Total Price</label>
+        <input type="number" id="totalPrice" placeholder="3000" min="0">
+        <div class="field-note">Full contract amount ($).</div>
+      </div>
+    </div>
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="balanceDueDays">Balance Due</label>
+        <input type="number" id="balanceDueDays" placeholder="30" min="1">
+        <div class="field-note">How many days before the wedding is the remaining balance due?</div>
+      </div>
+    </div>
+
+    <div class="field-section">Cancellation</div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="lateCancelDays">Late Cancellation Window</label>
+        <input type="number" id="lateCancelDays" placeholder="60" min="1">
+        <div class="field-note">Days before the wedding that triggers the late-cancel fee.</div>
+      </div>
+      <div class="field-group">
+        <label for="lateCancelFee">Late Cancellation Fee</label>
+        <input type="number" id="lateCancelFee" placeholder="50" min="0" max="100">
+        <div class="field-note">Percentage of total that is kept if client cancels late (%).</div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>If the wedding can't happen due to events outside anyone's control (force majeure)</label>
+      <div class="radio-group radio-group-wrap" id="forceMajeureWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','refund')">
+          <input type="radio" name="forceMajeure" value="refund">
+          <div class="radio-dot"></div>
+          <div>
+            <div class="radio-text">Refund the retainer in full</div>
+          </div>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','credit')">
+          <input type="radio" name="forceMajeure" value="credit">
+          <div class="radio-dot"></div>
+          <div>
+            <div class="radio-text">Apply retainer as credit toward a rescheduled date</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="field-section">Travel</div>
+
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="travelThreshold">Travel Fee Threshold</label>
+        <input type="number" id="travelThreshold" placeholder="30" min="0">
+        <div class="field-note">Miles from your location before a travel fee kicks in.</div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>How Do You Charge for Travel?</label>
+      <div class="radio-group radio-group-wrap" id="travelTypeWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'travelType','per_mile'); toggleConditional('travelPerMile', true); toggleConditional('travelFlat', false)">
+          <input type="radio" name="travelType" value="per_mile">
+          <div class="radio-dot"></div>
+          <div>
+            <div class="radio-text">Per mile</div>
+            <div class="radio-sub">A rate per mile beyond the threshold — e.g. $0.67/mile.</div>
+          </div>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'travelType','flat'); toggleConditional('travelFlat', true); toggleConditional('travelPerMile', false)">
+          <input type="radio" name="travelType" value="flat">
+          <div class="radio-dot"></div>
+          <div>
+            <div class="radio-text">Flat fee</div>
+            <div class="radio-sub">A single flat amount for any travel beyond the threshold — e.g. $150.</div>
+          </div>
+        </label>
+      </div>
+      <div class="conditional-field" id="travelPerMile">
+        <div class="field-row single">
+          <div class="field-group">
+            <label for="travelRatePerMile">Rate Per Mile</label>
+            <input type="number" id="travelRatePerMile" placeholder="0.67" min="0" step="0.01">
+            <div class="field-note">Dollars charged per mile beyond your threshold ($).</div>
+          </div>
+        </div>
+      </div>
+      <div class="conditional-field" id="travelFlat">
+        <div class="field-row single">
+          <div class="field-group">
+            <label for="travelFlatFee">Flat Travel Fee</label>
+            <input type="number" id="travelFlatFee" placeholder="150" min="0">
+            <div class="field-note">Flat amount charged for any trip beyond your threshold ($).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>Travel Costs Paid By</label>
+      <div class="radio-group inline radio-group-wrap" id="travelCostsWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'travelCosts','client')">
+          <input type="radio" name="travelCosts" value="client">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Client</span>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'travelCosts','photographer')">
+          <input type="radio" name="travelCosts" value="photographer">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Photographer</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field-section">Image Rights</div>
+
+    <div class="field-group" style="margin-bottom: 20px;">
+      <label>Portfolio Use of Images</label>
+      <div class="radio-group radio-group-wrap" id="portfolioWrap">
+        <label class="radio-opt" onclick="selectRadio(this,'portfolio','without')">
+          <input type="radio" name="portfolio" value="without">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Allowed without prior written consent from client</span>
+        </label>
+        <label class="radio-opt" onclick="selectRadio(this,'portfolio','with')">
+          <input type="radio" name="portfolio" value="with">
+          <div class="radio-dot"></div>
+          <span class="radio-text">Requires prior written consent from client</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-back" onclick="goBack(4)">← Back</button>
+      <div class="nav-spacer"></div>
+      <span id="errStep4" class="error-msg">Please fill in all required fields and select all options.</span>
+      <button class="btn-next" onclick="goNext(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ STEP 5: REVIEW & PAY ══════════════ -->
+
+  <div class="step" id="step-5">
+    <div class="step-eyebrow">Photographer Contract</div>
+    <div class="step-title">Review<br>& Pay</div>
+    <div class="step-subtitle">Everything look right? Once you pay, your personalized contract is ready instantly.</div>
+
+    <div id="reviewSummary"></div>
+
+    <div class="review-price-block">
+      <div class="review-price-eyebrow">Your Contract</div>
+      <div class="review-price-amount">$19.99</div>
+      <div class="review-price-note">One-time · Instant download · Yours forever</div>
+      <ul class="review-features">
+        <li>Fully personalized to your business</li>
+        <li>Attorney-reviewed contract language</li>
+        <li>Governing law for your state</li>
+        <li>Print or send digitally</li>
+        <li>Wedding-specific legal clauses</li>
+      </ul>
+    </div>
+
+    <div class="disclaimer">
+      This contract was generated via IvoryClause (ivoryclause.com). IvoryClause is a document generation platform and is not a party to this Agreement. IvoryClause does not provide legal advice, does not represent either party, and is not responsible for the enforcement, validity, or outcome of any agreement entered into using this template. Users are encouraged to consult a licensed attorney before signing.
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-back" onclick="goBack(5)">← Back</button>
+      <div class="nav-spacer"></div>
+      <button class="btn-pay" onclick="submitForm()">Pay $19.99 — Download Instantly</button>
+    </div>
+  </div>
+
+</div><!-- /form-main -->
+
+<script>
+var currentStep = 1;
+var totalSteps  = 5;
+
+var stepData = [
+  { label: 'Your Business',  commentary: 'Let\'s start with the basics.',             pct: 20  },
+  { label: 'Client Info',    commentary: 'Almost halfway there.',                     pct: 40  },
+  { label: 'Your Services',  commentary: 'You\'re more than halfway done.',           pct: 60  },
+  { label: 'Your Policies',  commentary: 'Almost there — just your policies left.',   pct: 80  },
+  { label: 'Review & Pay',   commentary: 'You\'re done — let\'s get you paid!',      pct: 100 }
+];
+
+function updateProgress(step) {
+  var d = stepData[step - 1];
+  document.getElementById('progressLabel').textContent      = d.label;
+  document.getElementById('progressCommentary').textContent = d.commentary;
+  document.getElementById('progressCount').textContent      = 'Step ' + step + ' of ' + totalSteps;
+  document.getElementById('progressPct').textContent        = d.pct + '%';
+  document.getElementById('progressFill').style.width       = d.pct + '%';
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  background: #f5f0e8 !important;
-  color: #1a1a1a !important;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  padding: 11px 14px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 400;
-  outline: none;
-  transition: border-color 0.18s;
-  -webkit-appearance: none;
-  appearance: none;
-}
-input:focus, select:focus, textarea:focus { border-color: #1a1a1a; }
-input.error, select.error { border-color: var(--error) !important; }
-textarea { resize: vertical; min-height: 80px; }
-select {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a1a' opacity='0.4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('step-' + n).classList.add('active');
+  currentStep = n;
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (n === 5) buildReview();
 }
 
-.field-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: #1a1a1a !important;
-  margin-top: 3px;
-  line-height: 1.5;
+function goNext(from) {
+  if (!validateStep(from)) return;
+  showStep(from + 1);
+}
+function goBack(from) { showStep(from - 1); }
+
+/* Radio */
+function selectRadio(el, name, val) {
+  document.querySelectorAll('[name="' + name + '"]').forEach(function(r) {
+    r.closest('.radio-opt').classList.remove('selected');
+  });
+  el.classList.add('selected');
+  el.querySelector('input[type="radio"]').checked = true;
+  var wrap = el.closest('.radio-group-wrap');
+  if (wrap) wrap.classList.remove('error');
 }
 
-/* ── RADIO GROUPS ── */
-.radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-.radio-group.inline { flex-direction: row; gap: 12px; flex-wrap: wrap; }
-.radio-opt {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid var(--line);
-  padding: 11px 16px;
-  cursor: pointer;
-  transition: border-color 0.18s, background 0.18s;
-  position: relative;
-}
-.radio-opt:hover { border-color: rgba(26,26,26,0.3); }
-.radio-opt.selected { border-color: #ff4500; background: rgba(255,69,0,0.03) !important; }
-.radio-opt input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-.radio-dot {
-  width: 14px;
-  height: 14px;
-  border: 1.5px solid var(--line);
-  border-radius: 50%;
-  flex-shrink: 0;
-  transition: border-color 0.18s;
-  position: relative;
-  background: #f5f0e8;
-}
-.radio-opt.selected .radio-dot { border-color: #ff4500; }
-.radio-opt.selected .radio-dot::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #ff4500;
-}
-.radio-text { font-family: 'DM Sans', sans-serif; font-size: 0.84rem; font-weight: 400; color: #1a1a1a; }
-.radio-sub { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; color: #1a1a1a; margin-top: 2px; }
-.radio-group-wrap.error .radio-opt { border-color: rgba(192,57,43,0.3) !important; }
-
-/* ── CONDITIONAL FIELDS ── */
-.conditional-field {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
-  margin-top: 0;
-}
-.conditional-field.visible { max-height: 500px; opacity: 1; margin-top: 20px; }
-
-/* ── TIME INPUT ── */
-.time-row { display: grid; grid-template-columns: 1fr 1fr 80px; gap: 10px; }
-
-/* ── REVIEW STEP ── */
-.review-group { margin-bottom: 32px; }
-.review-group-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(26,26,26,0.35);
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line-light);
-}
-.review-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid var(--line-light);
-  border-left: 1px solid var(--line-light);
-}
-.review-item {
-  border-right: 1px solid var(--line-light);
-  border-bottom: 1px solid var(--line-light);
-  padding: 12px 16px;
-}
-.review-item-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  margin-bottom: 4px;
-}
-.review-item-value {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 400;
-  color: #1a1a1a;
-  line-height: 1.4;
-}
-.review-item-value.empty { color: rgba(26,26,26,0.45); font-style: italic; }
-
-.review-price-block {
-  border: 1px solid #1a1a1a;
-  padding: 28px 32px;
-  margin-top: 36px;
-  background: #1a1a1a !important;
-}
-.review-price-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(245,240,232,0.4);
-  margin-bottom: 12px;
-}
-.review-price-amount {
-  font-family: 'MeshedDisplay', serif;
-  font-size: 4rem;
-  color: #f5f0e8 !important;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.review-price-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 300;
-  color: rgba(245,240,232,0.5);
-  margin-bottom: 20px;
-}
-.review-features { list-style: none; margin-bottom: 28px; }
-.review-features li {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(245,240,232,0.7);
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(245,240,232,0.08);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.review-features li::before { content: '—'; color: #ff4500; flex-shrink: 0; }
-
-/* ── DISCLAIMER ── */
-.disclaimer {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 300;
-  color: #1a1a1a;
-  line-height: 1.8;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line-light);
+/* Conditional */
+function toggleConditional(id, show) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  show ? el.classList.add('visible') : el.classList.remove('visible');
 }
 
-/* ── WIZARD NAVIGATION ── */
-.step-nav {
-  display: flex;
-  align-items: center;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
-  gap: 16px;
+/* Helpers */
+function rv(id)   { var e = document.getElementById(id); return e ? e.value.trim() : ''; }
+function rvr(name){ var c = document.querySelector('[name="' + name + '"]:checked'); return c ? c.value : ''; }
+function rvLabel(name) {
+  var c = document.querySelector('[name="' + name + '"]:checked');
+  if (!c) return '—';
+  var t = c.closest('.radio-opt').querySelector('.radio-text');
+  return t ? t.textContent.trim() : c.value;
 }
-.nav-spacer { flex: 1; }
-.btn-back {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  background: none;
-  border: 1px solid var(--line);
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: color 0.18s, border-color 0.18s;
+function photoAddressFull() {
+  var parts = [rv('photoStreet')];
+  if (rv('photoApt')) parts[0] += ' ' + rv('photoApt');
+  parts.push(rv('photoCity'));
+  parts.push(rv('photoAddrState') + ' ' + rv('photoZip'));
+  return parts.filter(Boolean).join(', ');
 }
-.btn-back:hover { color: #1a1a1a; border-color: rgba(26,26,26,0.3); }
-.btn-next {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #f5f0e8 !important;
-  background: #ff4500 !important;
-  border: none;
-  padding: 14px 36px;
-  cursor: pointer;
-  transition: opacity 0.18s;
+function venueAddressFull() {
+  var parts = [rv('venueStreet')];
+  if (rv('venueApt')) parts[0] += ' ' + rv('venueApt');
+  parts.push(rv('venueCity'));
+  parts.push(rv('venueAddrState') + ' ' + rv('venueZip'));
+  return parts.filter(Boolean).join(', ');
 }
-.btn-next:hover { opacity: 0.88; }
-.btn-pay {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #f5f0e8 !important;
-  background: #1a1a1a !important;
-  border: none;
-  padding: 14px 40px;
-  cursor: pointer;
-  transition: background 0.18s;
+function ceremonyTime() {
+  var h = rv('ceremonyHour'), m = rv('ceremonyMin'), a = rv('ceremonyAmPm');
+  if (!h || !m || !a) return '';
+  return h + ':' + m + ' ' + a;
 }
-.btn-pay:hover { background: #ff4500 !important; }
-
-/* ── VALIDATION ERROR ── */
-.error-msg {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  color: var(--error);
-  margin-top: 14px;
-  display: none;
-}
-.error-msg.visible { display: block; }
-
-/* ============================================================
-   COMING SOON PAGE
-   ============================================================ */
-.coming-soon-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-}
-.coming-soon-wordmark {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #1a1a1a !important;
-  margin-bottom: 24px;
-}
-.coming-soon-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ff4500;
-  font-weight: 600;
+function engTime() {
+  var h = rv('engHour'), m = rv('engMin'), a = rv('engAmPm');
+  if (!h || !m || !a) return '';
+  return h + ':' + m + ' ' + a;
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 900px) {
-  /* Home page */
-  header { padding: 18px 24px; }
-  nav { display: none; }
-  .hero { padding: 64px 24px 52px; }
-  .hero-bottom { flex-direction: column; align-items: flex-start; }
-  .hero-actions { align-items: flex-start; }
-  .hero-note { text-align: left; }
-  .vendors, .how, .pricing { padding: 60px 24px; }
-  .vendor-grid { grid-template-columns: 1fr 1fr; }
-  .steps { grid-template-columns: 1fr; }
-  .step, .step:not(:first-child) {
-    padding: 36px 0;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+/* Validation */
+function markField(id, ok) {
+  var e = document.getElementById(id);
+  if (!e) return;
+  ok ? e.classList.remove('error') : e.classList.add('error');
+  return ok;
+}
+function checkRequired(ids) {
+  var ok = true;
+  ids.forEach(function(id) { if (!markField(id, !!rv(id))) ok = false; });
+  return ok;
+}
+function checkRadios(names) {
+  var ok = true;
+  names.forEach(function(name) {
+    if (!rvr(name)) {
+      var wrap = document.getElementById(name + 'Wrap');
+      if (wrap) wrap.classList.add('error');
+      ok = false;
+    }
+  });
+  return ok;
+}
+
+function validateStep(step) {
+  var ok = true;
+  var errEl = document.getElementById('errStep' + step);
+  if (errEl) errEl.classList.remove('visible');
+
+  if (step === 1) {
+    ok = checkRequired(['photoName','photoEmail','photoStreet','photoCity','photoAddrState','photoZip','photoState']);
   }
-  .pricing { grid-template-columns: 1fr; gap: 44px; }
-  footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+  if (step === 2) {
+    ok = checkRequired(['client1','clientEmail','weddingDate','venueName','venueStreet','venueCity','venueAddrState','venueZip']);
+    if (!ceremonyTime()) { ok = false; }
+  }
+  if (step === 3) {
+    ok = checkRequired(['coverageHours','servicesIncluded','numImages','deliveryWeeks','deliveryMethod','groupPhotoMinutes','familyPhotoMinutes']) && ok;
+    ok = checkRadios(['secondShooter','engagement','rawFiles']) && ok;
+    if (rvr('engagement') === 'yes') {
+      ok = checkRequired(['engDate','engLocation']) && ok;
+      if (!engTime()) ok = false;
+    }
+  }
+  if (step === 4) {
+    ok = checkRequired(['retainer','remainingBalance','totalPrice','balanceDueDays','lateCancelDays','lateCancelFee','travelThreshold']) && ok;
+    ok = checkRadios(['forceMajeure','travelType','travelCosts','portfolio']) && ok;
+    if (rvr('travelType') === 'per_mile') ok = checkRequired(['travelRatePerMile']) && ok;
+    if (rvr('travelType') === 'flat')     ok = checkRequired(['travelFlatFee']) && ok;
+  }
+
+  if (!ok && errEl) errEl.classList.add('visible');
+  return ok;
 }
 
-@media (max-width: 700px) {
-  /* Contract wizard */
-  .contract-header { padding: 16px 20px; }
-  .progress-bar-wrap { padding: 16px 20px 14px; }
-  .form-main { padding: 36px 20px 100px; }
-  .field-row, .field-row.third { grid-template-columns: 1fr; }
-  .review-items { grid-template-columns: 1fr; }
-  .radio-group.inline { flex-direction: column; }
-  .time-row { grid-template-columns: 1fr 80px; }
+/* Review */
+function rGroup(label, items) {
+  var html = '<div class="review-group"><div class="review-group-label">' + label + '</div><div class="review-items">';
+  items.filter(Boolean).forEach(function(item) {
+    var val = item[1] || '—';
+    var empty = !item[1] || item[1] === '—';
+    html += '<div class="review-item"><div class="review-item-label">' + item[0] + '</div>';
+    html += '<div class="review-item-value' + (empty ? ' empty' : '') + '">' + val + '</div></div>';
+  });
+  html += '</div></div>';
+  return html;
 }
+
+function travelFeeStr() {
+  var t = rvr('travelType');
+  if (t === 'per_mile') return '$' + rv('travelRatePerMile') + ' per mile';
+  if (t === 'flat')     return '$' + rv('travelFlatFee') + ' flat fee';
+  return '—';
+}
+
+function buildReview() {
+  var hasEng = rvr('engagement') === 'yes';
+  var html = '';
+  html += rGroup('Your Business', [
+    ['Name', rv('photoName')],
+    ['Business', rv('bizName') || rv('photoName')],
+    ['Email', rv('photoEmail')],
+    ['Address', photoAddressFull()],
+    ['Governing State', rv('photoState')]
+  ]);
+  html += rGroup('Client Info', [
+    ['Client 1', rv('client1')],
+    ['Client 2', rv('client2') || null],
+    ['Client Email', rv('clientEmail')],
+    ['Wedding Date', rv('weddingDate')],
+    ['Ceremony Time', ceremonyTime()],
+    ['Venue', rv('venueName')],
+    ['Venue Address', venueAddressFull()]
+  ]);
+  html += rGroup('Your Services', [
+    ['Coverage', rv('coverageHours') + ' hrs'],
+    ['Services', rv('servicesIncluded')],
+    ['Second Shooter', rvLabel('secondShooter')],
+    ['Engagement Session', rvLabel('engagement')],
+    hasEng ? ['Engagement Date', rv('engDate')] : null,
+    hasEng ? ['Engagement Time', engTime()] : null,
+    hasEng ? ['Engagement Location', rv('engLocation')] : null,
+    ['Edited Images', rv('numImages') + ' minimum'],
+    ['Delivery', rv('deliveryWeeks') + ' weeks via ' + rv('deliveryMethod')],
+    ['Wedding Party Photos', rv('groupPhotoMinutes') + ' min'],
+    ['Family Formal Photos', rv('familyPhotoMinutes') + ' min'],
+    ['Raw Files', rvLabel('rawFiles')]
+  ]);
+  html += rGroup('Your Policies', [
+    ['Retainer', '$' + rv('retainer')],
+    ['Remaining Balance', '$' + rv('remainingBalance')],
+    ['Total', '$' + rv('totalPrice')],
+    ['Balance Due', rv('balanceDueDays') + ' days before wedding'],
+    ['Late Cancel Window', rv('lateCancelDays') + ' days'],
+    ['Late Cancel Fee', rv('lateCancelFee') + '%'],
+    ['Force Majeure', rvLabel('forceMajeure')],
+    ['Travel Threshold', rv('travelThreshold') + ' miles'],
+    ['Travel Fee', travelFeeStr()],
+    ['Travel Costs', rvLabel('travelCosts')],
+    ['Portfolio Use', rvLabel('portfolio')]
+  ]);
+  document.getElementById('reviewSummary').innerHTML = html;
+}
+
+/* Submit */
+function submitForm() {
+  var data = {
+    photoName: rv('photoName'), bizName: rv('bizName') || rv('photoName'),
+    photoEmail: rv('photoEmail'), photoAddress: photoAddressFull(),
+    photoState: rv('photoState'), client1: rv('client1'), client2: rv('client2'),
+    clientEmail: rv('clientEmail'), weddingDate: rv('weddingDate'),
+    ceremonyTime: ceremonyTime(), venueName: rv('venueName'), venueAddress: venueAddressFull(),
+    coverageHours: rv('coverageHours'), servicesIncluded: rv('servicesIncluded'),
+    secondShooter: rvr('secondShooter'), engagement: rvr('engagement'),
+    engDate: rv('engDate'), engTime: engTime(), engLocation: rv('engLocation'),
+    numImages: rv('numImages'), deliveryWeeks: rv('deliveryWeeks'),
+    deliveryMethod: rv('deliveryMethod'), groupPhotoMinutes: rv('groupPhotoMinutes'),
+    familyPhotoMinutes: rv('familyPhotoMinutes'), rawFiles: rvr('rawFiles'),
+    retainer: rv('retainer'), remainingBalance: rv('remainingBalance'),
+    totalPrice: rv('totalPrice'), balanceDueDays: rv('balanceDueDays'),
+    lateCancelDays: rv('lateCancelDays'), lateCancelFee: rv('lateCancelFee'),
+    forceMajeure: rvr('forceMajeure'), travelThreshold: rv('travelThreshold'),
+    travelType: rvr('travelType'),
+    travelFee: rvr('travelType') === 'per_mile' ? rv('travelRatePerMile') : rv('travelFlatFee'),
+    travelCosts: rvr('travelCosts'), portfolio: rvr('portfolio')
+  };
+  fetch('/.netlify/functions/create-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ contractType: 'photographer', formData: data })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) { if (d.url) window.location.href = d.url; })
+  .catch(function() { alert('Something went wrong. Please try again.'); });
+}
+
+updateProgress(1);
+</script>
+
+</body>
+</html>
