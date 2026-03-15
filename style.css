@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* ── GOOGLE FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap');
 
 /* ── CUSTOM FONT ── */
 @font-face {
@@ -20,7 +20,7 @@
 :root {
   --ivory: #f5f0e8;
   --black: #1a1a1a;
-  --orange: #ff4500;
+  --red: #e8000d;
   --line: rgba(26,26,26,0.1);
   --line-light: rgba(26,26,26,0.06);
   --error: #c0392b;
@@ -53,25 +53,26 @@ header {
   z-index: 100;
 }
 .wordmark {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(3.2rem, 6vw, 5rem);
-  letter-spacing: 0.04em;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   text-decoration: none !important;
 }
 nav { display: flex; gap: 40px; align-items: center; }
 nav a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
-nav a:hover { color: #ff4500 !important; }
-.nav-cta { color: #ff4500 !important; }
+nav a:hover { color: #e8000d !important; }
+.nav-cta { color: #e8000d !important; }
 
 /* ── FOOTER ── */
 footer {
@@ -85,17 +86,18 @@ footer {
   border-top: 1px solid var(--line);
 }
 .footer-wordmark {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  letter-spacing: 0.06em;
+  font-weight: 900;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #ff4500;
-  opacity: 0.4;
+  color: #1a1a1a;
+  opacity: 0.2;
 }
 .footer-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   max-width: 500px;
@@ -106,48 +108,49 @@ footer {
 /* ── BUTTONS ── */
 .btn-primary {
   display: inline-block;
-  background: #ff4500 !important;
+  background: #e8000d !important;
   color: #f5f0e8 !important;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 18px 44px;
   text-decoration: none !important;
-  font-weight: 600;
+  font-weight: 700;
 }
 .btn-dark {
   display: block;
   background: #1a1a1a !important;
   color: #f5f0e8 !important;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 18px 36px;
   text-decoration: none !important;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
 }
-.btn-dark:hover { background: #ff4500 !important; }
+.btn-dark:hover { background: #e8000d !important; }
 
 /* ── SECTION LABELS ── */
 .section-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ff4500;
+  color: #e8000d;
   margin-bottom: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .section-title {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 900;
   text-transform: uppercase;
   color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.02em;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   margin-bottom: 52px;
 }
 
@@ -162,31 +165,32 @@ footer {
   margin: 0 auto;
 }
 .hero-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ff4500;
+  color: #e8000d;
   margin-bottom: 28px;
   display: flex;
   align-items: center;
   gap: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .hero-eyebrow::before {
   content: '';
   display: block;
   width: 32px;
   height: 1px;
-  background: #ff4500;
+  background: #e8000d;
 }
 .hero-headline {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(3rem, 6vw, 6.5rem);
-  line-height: 0.9;
+  font-weight: 900;
+  line-height: 0.88;
   text-transform: uppercase;
-  color: #ff4500 !important;
-  letter-spacing: 0.01em;
+  color: #e8000d !important;
+  letter-spacing: -0.03em;
   margin-bottom: 56px;
 }
 .hero-bottom {
@@ -199,19 +203,19 @@ footer {
 }
 .hero-sub { max-width: 460px; }
 .hero-sub-orange {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ff4500;
+  color: #e8000d;
   display: block;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.7;
 }
 .hero-sub-black {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #1a1a1a !important;
@@ -227,15 +231,15 @@ footer {
   flex-shrink: 0;
 }
 .hero-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   text-align: right;
   font-weight: 500;
 }
-.hero-note span { color: #ff4500; }
+.hero-note span { color: #e8000d; }
 
 /* ── TICKER ── */
 .ticker {
@@ -247,18 +251,18 @@ footer {
 }
 .ticker-inner { display: inline-flex; animation: ticker 28s linear infinite; }
 .ticker-item {
-  font-family: 'Syne', sans-serif;
-  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: #1a1a1a;
   padding: 0 32px;
   display: flex;
   align-items: center;
   gap: 32px;
-  font-weight: 600;
+  font-weight: 700;
 }
-.ticker-item::after { content: '✦'; font-size: 0.5rem; color: #ff4500; }
+.ticker-item::after { content: '✦'; font-size: 0.5rem; color: #e8000d; }
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -287,42 +291,42 @@ footer {
   color: #1a1a1a !important;
 }
 .vendor-card:hover { background: #fff5f1 !important; }
-.vendor-card:hover .vendor-name { color: #ff4500 !important; }
+.vendor-card:hover .vendor-name { color: #e8000d !important; }
 .vendor-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   color: #1a1a1a !important;
   margin-bottom: 20px;
   font-weight: 500;
 }
 .vendor-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
   text-transform: uppercase;
   color: #1a1a1a !important;
   margin-bottom: 12px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-weight: 700;
   transition: color 0.22s;
 }
 .vendor-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   line-height: 1.8;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 22px;
 }
 .vendor-price {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #ff4500;
-  font-weight: 500;
+  color: #e8000d;
+  font-weight: 700;
 }
 
 /* ── HOW IT WORKS ── */
@@ -342,30 +346,31 @@ footer {
 .steps .step:last-child { border-right: none; padding-right: 0; }
 .steps .step:not(:first-child) { padding-left: 48px; }
 .step-num {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 4rem;
-  color: #ff4500;
+  font-weight: 900;
+  color: #e8000d;
   line-height: 1;
   margin-bottom: 24px;
   opacity: 0.7;
 }
 .step-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: #1a1a1a !important;
   margin-bottom: 14px;
   letter-spacing: 0.04em;
-  font-weight: 600;
 }
 .step-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   line-height: 1.9;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ── PRICING ── */
@@ -380,22 +385,23 @@ footer {
   margin: 0 auto;
 }
 .pricing-headline {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 900;
   text-transform: uppercase;
   color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.02em;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   margin: 16px 0 28px;
 }
 .pricing-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   line-height: 2;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 36px;
 }
 .attorney-badge {
@@ -408,12 +414,12 @@ footer {
 .attorney-badge-dot {
   width: 6px;
   height: 6px;
-  background: #ff4500;
+  background: #e8000d;
   border-radius: 50%;
 }
 .attorney-badge-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #1a1a1a !important;
@@ -421,16 +427,17 @@ footer {
 }
 .pricing-right { border: 1px solid var(--line); padding: 52px; }
 .price-amount {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 5.5rem;
+  font-weight: 900;
   color: #1a1a1a !important;
   line-height: 1;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.03em;
 }
-.price-amount sup { font-size: 2rem; color: #ff4500; vertical-align: super; }
+.price-amount sup { font-size: 2rem; color: #e8000d; vertical-align: super; }
 .price-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #1a1a1a !important;
@@ -439,8 +446,8 @@ footer {
 }
 .features { list-style: none; margin-bottom: 40px; }
 .features li {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1a1a1a !important;
@@ -451,7 +458,7 @@ footer {
   gap: 14px;
   align-items: center;
 }
-.features li::before { content: '—'; color: #ff4500; flex-shrink: 0; }
+.features li::before { content: '—'; color: #e8000d; flex-shrink: 0; }
 
 /* ============================================================
    CONTRACT WIZARD
@@ -470,17 +477,18 @@ footer {
   z-index: 200;
 }
 .contract-header .wordmark {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 .back-link {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #1a1a1a;
+  font-weight: 500;
   transition: color 0.18s;
 }
-.back-link:hover { color: #1a1a1a !important; }
+.back-link:hover { color: #e8000d !important; }
 
 /* ── PROGRESS BAR ── */
 .progress-bar-wrap {
@@ -496,16 +504,16 @@ footer {
 }
 .progress-left { display: flex; flex-direction: column; gap: 4px; }
 .progress-label {
-  font-family: 'Syne', sans-serif;
-  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #1a1a1a;
 }
 .progress-commentary {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
   font-weight: 300;
   font-style: italic;
   color: #1a1a1a;
@@ -513,8 +521,9 @@ footer {
 }
 .progress-right { text-align: right; }
 .progress-count {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -522,20 +531,20 @@ footer {
   margin-bottom: 2px;
 }
 .progress-pct {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
-  font-weight: 400;
-  color: #ff4500;
+  font-weight: 900;
+  color: #e8000d;
   letter-spacing: -0.02em;
 }
 .progress-track {
-  height: 4px;
+  height: 3px;
   background: var(--line);
   position: relative;
 }
 .progress-fill {
   height: 100%;
-  background: #ff4500;
+  background: #e8000d;
   transition: width 0.4s ease;
   width: 20%;
 }
@@ -557,28 +566,32 @@ footer {
 }
 
 .step-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #ff4500;
-  margin-bottom: 10px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
 }
 .step-title {
-  font-family: 'MeshedDisplay', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
   text-transform: uppercase;
-  color: #1a1a1a !important;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  margin-bottom: 16px;
+  color: #e8000d !important;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
 }
 .step-subtitle {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #1a1a1a;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 44px;
   max-width: 560px;
 }
@@ -589,9 +602,10 @@ footer {
   align-items: center;
   gap: 14px;
   margin: 36px 0 28px;
-  color: rgba(26,26,26,0.35);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
@@ -604,10 +618,10 @@ footer {
 .field-group { display: flex; flex-direction: column; gap: 7px; }
 
 label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #1a1a1a !important;
 }
@@ -616,7 +630,7 @@ label .label-hint {
   text-transform: none;
   letter-spacing: 0;
   color: #1a1a1a;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   margin-left: 6px;
 }
 
@@ -629,22 +643,26 @@ textarea {
   width: 100%;
   background: #f5f0e8 !important;
   color: #1a1a1a !important;
+  -webkit-text-fill-color: #1a1a1a !important;
   border: 1px solid var(--line);
   border-radius: 0;
   padding: 11px 14px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
   outline: none;
   transition: border-color 0.18s;
   -webkit-appearance: none;
   appearance: none;
 }
+input::placeholder { color: rgba(26,26,26,0.35) !important; -webkit-text-fill-color: rgba(26,26,26,0.35) !important; font-weight: 300; }
 input:focus, select:focus, textarea:focus { border-color: #1a1a1a; }
 input.error, select.error { border-color: var(--error) !important; }
 textarea { resize: vertical; min-height: 80px; }
 select {
   cursor: pointer;
+  color: #1a1a1a !important;
+  font-weight: 300;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a1a' opacity='0.4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
@@ -652,8 +670,8 @@ select {
 }
 
 .field-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
   font-weight: 400;
   color: #1a1a1a !important;
   margin-top: 3px;
@@ -674,7 +692,7 @@ select {
   position: relative;
 }
 .radio-opt:hover { border-color: rgba(26,26,26,0.3); }
-.radio-opt.selected { border-color: #ff4500; background: rgba(255,69,0,0.03) !important; }
+.radio-opt.selected { border-color: #e8000d; background: rgba(232,0,13,0.02) !important; }
 .radio-opt input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
 .radio-dot {
   width: 14px;
@@ -686,7 +704,7 @@ select {
   position: relative;
   background: #f5f0e8;
 }
-.radio-opt.selected .radio-dot { border-color: #ff4500; }
+.radio-opt.selected .radio-dot { border-color: #e8000d; }
 .radio-opt.selected .radio-dot::after {
   content: '';
   position: absolute;
@@ -694,11 +712,14 @@ select {
   transform: translate(-50%, -50%);
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: #ff4500;
+  background: #e8000d;
 }
-.radio-text { font-family: 'DM Sans', sans-serif; font-size: 0.84rem; font-weight: 400; color: #1a1a1a; }
-.radio-sub { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; color: #1a1a1a; margin-top: 2px; }
+.radio-text { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; color: #1a1a1a; }
+.radio-sub { font-family: 'Inter', sans-serif; font-size: 0.66rem; color: #1a1a1a; margin-top: 2px; }
 .radio-group-wrap.error .radio-opt { border-color: rgba(192,57,43,0.3) !important; }
+
+/* ── SECOND SHOOTER SPACING FIX ── */
+.field-group > label + .radio-group-wrap { margin-top: 8px; }
 
 /* ── CONDITIONAL FIELDS ── */
 .conditional-field {
@@ -716,11 +737,12 @@ select {
 /* ── REVIEW STEP ── */
 .review-group { margin-bottom: 32px; }
 .review-group-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.58rem;
+  font-weight: 700;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(26,26,26,0.35);
+  color: #1a1a1a;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line-light);
@@ -738,22 +760,22 @@ select {
   padding: 12px 16px;
 }
 .review-item-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #1a1a1a;
   margin-bottom: 4px;
 }
 .review-item-value {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #1a1a1a;
   line-height: 1.4;
 }
-.review-item-value.empty { color: rgba(26,26,26,0.45); font-style: italic; }
+.review-item-value.empty { color: rgba(26,26,26,0.4); font-style: italic; }
 
 .review-price-block {
   border: 1px solid #1a1a1a;
@@ -762,22 +784,25 @@ select {
   background: #1a1a1a !important;
 }
 .review-price-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.58rem;
+  font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(245,240,232,0.4);
   margin-bottom: 12px;
 }
 .review-price-amount {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 4rem;
+  font-weight: 900;
   color: #f5f0e8 !important;
   line-height: 1;
+  letter-spacing: -0.03em;
   margin-bottom: 6px;
 }
 .review-price-note {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   font-weight: 300;
   color: rgba(245,240,232,0.5);
@@ -785,9 +810,10 @@ select {
 }
 .review-features { list-style: none; margin-bottom: 28px; }
 .review-features li {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(245,240,232,0.7);
   padding: 8px 0;
@@ -796,11 +822,11 @@ select {
   align-items: center;
   gap: 12px;
 }
-.review-features li::before { content: '—'; color: #ff4500; flex-shrink: 0; }
+.review-features li::before { content: '—'; color: #e8000d; flex-shrink: 0; }
 
 /* ── DISCLAIMER ── */
 .disclaimer {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.62rem;
   font-weight: 300;
   color: #1a1a1a;
@@ -821,9 +847,9 @@ select {
 }
 .nav-spacer { flex: 1; }
 .btn-back {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -831,27 +857,27 @@ select {
   border: 1px solid var(--line);
   padding: 12px 24px;
   cursor: pointer;
-  transition: color 0.18s, border-color 0.18s;
+  transition: border-color 0.18s;
 }
-.btn-back:hover { color: #1a1a1a; border-color: rgba(26,26,26,0.3); }
+.btn-back:hover { border-color: rgba(26,26,26,0.3); }
 .btn-next {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #f5f0e8 !important;
-  background: #ff4500 !important;
+  background: #1a1a1a !important;
   border: none;
   padding: 14px 36px;
   cursor: pointer;
-  transition: opacity 0.18s;
+  transition: background 0.18s;
 }
-.btn-next:hover { opacity: 0.88; }
+.btn-next:hover { background: #e8000d !important; }
 .btn-pay {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #f5f0e8 !important;
@@ -861,12 +887,13 @@ select {
   cursor: pointer;
   transition: background 0.18s;
 }
-.btn-pay:hover { background: #ff4500 !important; }
+.btn-pay:hover { background: #e8000d !important; }
 
 /* ── VALIDATION ERROR ── */
 .error-msg {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
   color: var(--error);
   margin-top: 14px;
   display: none;
@@ -886,20 +913,21 @@ select {
   padding: 40px;
 }
 .coming-soon-wordmark {
-  font-family: 'MeshedDisplay', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.5rem, 8vw, 6rem);
-  letter-spacing: 0.04em;
+  font-weight: 900;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #1a1a1a !important;
   margin-bottom: 24px;
 }
 .coming-soon-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ff4500;
-  font-weight: 600;
+  color: #e8000d;
+  font-weight: 700;
 }
 
 /* ============================================================
