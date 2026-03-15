@@ -8,6 +8,15 @@ exports.handler = async (event) => {
   try {
     const { contractType, formData } = JSON.parse(event.body);
 
+    // Stripe metadata values are limited to 500 chars — chunk the formData
+    const str = JSON.stringify(formData);
+    const size = 490;
+    const total = Math.ceil(str.length / size);
+    const metadata = { contractType, formData_chunks: String(total) };
+    for (let i = 0; i < total; i++) {
+      metadata['formData_' + i] = str.slice(i * size, (i + 1) * size);
+    }
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -26,10 +35,7 @@ exports.handler = async (event) => {
       mode: 'payment',
       success_url: `${process.env.URL}/success.html`,
       cancel_url: `${process.env.URL}/contract.html`,
-      metadata: {
-        contractType,
-        formData: JSON.stringify(formData),
-      },
+      metadata,
     });
 
     return {
