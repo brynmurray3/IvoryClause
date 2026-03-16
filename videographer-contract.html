@@ -433,13 +433,23 @@
     <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','refund')">
       <input type="radio" name="forceMajeure" value="refund">
       <div class="radio-dot"></div>
-      <div><div class="radio-text">Refund the retainer in full</div></div>
+      <div><div class="radio-text">Refund the retainer in full — all amounts paid are returned to the client and no further amounts are owed</div></div>
     </label>
     <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','credit')">
       <input type="radio" name="forceMajeure" value="credit">
       <div class="radio-dot"></div>
-      <div><div class="radio-text">Apply retainer as credit toward a rescheduled date</div></div>
+      <div><div class="radio-text">Apply retainer as credit toward a rescheduled date — all amounts paid are held and applied to a future event, and no further amounts are owed unless a new agreement is signed</div></div>
     </label>
+  </div>
+</div>
+
+<div class="field-section">Jurisdiction</div>
+
+<div class="field-row single">
+  <div class="field-group">
+    <label for="venueCounty">County Where Services Are Rendered</label>
+    <input type="text" id="venueCounty" placeholder="Davidson County">
+    <div class="field-note">This agreement shall be governed by the laws of the state where services are rendered. Jurisdiction and venue shall be proper in the nearest court of this county and state.</div>
   </div>
 </div>
 
@@ -546,6 +556,39 @@
 
 ```
 <div id="reviewSummary"></div>
+
+<div class="field-section">Signatures</div>
+
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigVideoName">Videographer — Printed Name</label>
+    <input type="text" id="sigVideoName" placeholder="Jane Doe">
+  </div>
+  <div class="field-group">
+    <label for="sigVideoPhone">Videographer — Phone</label>
+    <input type="text" id="sigVideoPhone" placeholder="(615) 555-0100">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigClient1Name">Client 1 — Printed Name</label>
+    <input type="text" id="sigClient1Name" placeholder="Alex Rivera">
+  </div>
+  <div class="field-group">
+    <label for="sigClient1Phone">Client 1 — Phone</label>
+    <input type="text" id="sigClient1Phone" placeholder="(615) 555-0101">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigClient2Name">Client 2 — Printed Name <span class="label-hint">if applicable</span></label>
+    <input type="text" id="sigClient2Name" placeholder="Jordan Rivera">
+  </div>
+  <div class="field-group">
+    <label for="sigClient2Phone">Client 2 — Phone <span class="label-hint">if applicable</span></label>
+    <input type="text" id="sigClient2Phone" placeholder="(615) 555-0102">
+  </div>
+</div>
 
 <div class="review-price-block">
   <div class="review-price-eyebrow">Your Contract</div>
@@ -695,17 +738,21 @@ function validateStep(step) {
     if (rvr('highlightReel') === 'yes') ok = checkRequired(['highlightReelLength']) && ok;
   }
   if (step === 4) {
-    ok = checkRequired(['retainer','remainingBalance','totalPrice','balanceDueDays','lateCancelDays','lateCancelFee','travelThreshold']) && ok;
+    ok = checkRequired(['retainer','remainingBalance','totalPrice','balanceDueDays','lateCancelDays','lateCancelFee','travelThreshold','venueCounty']) && ok;
     ok = checkRadios(['forceMajeure','travelType','travelCosts','portfolio']) && ok;
     if (rvr('travelType') === 'per_mile') ok = checkRequired(['travelRatePerMile']) && ok;
     if (rvr('travelType') === 'flat')     ok = checkRequired(['travelFlatFee']) && ok;
+  }
+  if (step === 5) {
+    ok = checkRequired(['sigVideoName','sigVideoPhone','sigClient1Name','sigClient1Phone']) && ok;
   }
   if (!ok && errEl) errEl.classList.add('visible');
   return ok;
 }
 
-function rGroup(label, items) {
-  var html = '<div class="review-group"><div class="review-group-label">' + label + '</div><div class="review-items">';
+function rGroup(label, items, step) {
+  var editBtn = step ? '<button onclick="showStep(' + step + ')" style="font-family:\'Inter\',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;background:none;border:1px solid rgba(26,26,26,0.15);padding:4px 12px;cursor:pointer;color:#1a1a1a;margin-left:auto;">Edit</button>' : '';
+  var html = '<div class="review-group"><div class="review-group-label" style="display:flex;align-items:center;">' + label + editBtn + '</div><div class="review-items">';
   items.filter(Boolean).forEach(function(item) {
     var val = item[1] || '—';
     var empty = !item[1] || item[1] === '—';
@@ -732,7 +779,7 @@ function buildReview() {
     ['Email', rv('videoEmail')],
     ['Address', videoAddressFull()],
     ['Governing State', rv('videoState')]
-  ]);
+  ], 1);
   html += rGroup('Client Info', [
     ['Client 1', rv('client1')],
     ['Client 2', rv('client2') || null],
@@ -741,7 +788,7 @@ function buildReview() {
     ['Ceremony Time', ceremonyTime()],
     ['Venue', rv('venueName')],
     ['Venue Address', venueAddressFull()]
-  ]);
+  ], 2);
   html += rGroup('Your Services', [
     ['Coverage', rv('coverageHours') + ' hrs'],
     ['Services', rv('servicesIncluded')],
@@ -752,7 +799,7 @@ function buildReview() {
     ['Full Ceremony Film', rvLabel('ceremonyFilm')],
     ['Raw Footage', rvLabel('rawFootage')],
     ['Delivery', rv('deliveryWeeks') + ' weeks via ' + rv('deliveryMethod')]
-  ]);
+  ], 3);
   html += rGroup('Your Policies', [
     ['Retainer', '$' + rv('retainer')],
     ['Remaining Balance', '$' + rv('remainingBalance')],
@@ -764,7 +811,16 @@ function buildReview() {
     ['Travel Threshold', rv('travelThreshold') + ' miles'],
     ['Travel Fee', travelFeeStr()],
     ['Travel Costs', rvLabel('travelCosts')],
-    ['Portfolio Use', rvLabel('portfolio')]
+    ['Film Rights', rvLabel('portfolio')],
+    ['Jurisdiction', rv('venueCounty')]
+  ], 4);
+  html += rGroup('Signatures', [
+    ['Videographer', rv('sigVideoName')],
+    ['Videographer Phone', rv('sigVideoPhone')],
+    ['Client 1', rv('sigClient1Name')],
+    ['Client 1 Phone', rv('sigClient1Phone')],
+    rv('sigClient2Name') ? ['Client 2', rv('sigClient2Name')] : null,
+    rv('sigClient2Phone') ? ['Client 2 Phone', rv('sigClient2Phone')] : null
   ]);
   document.getElementById('reviewSummary').innerHTML = html;
 }
