@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Officiant Contract — IvoryClause</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body style="background:#f5f0e8 !important; color:#1a1a1a !important;">
+
+<header>
+  <a href="/" class="wordmark">IvoryClause</a>
+  <a href="/" class="back-link">← All Contracts</a>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="progress-meta">
+    <div class="progress-left">
+      <div class="progress-label" id="progressLabel">Your Business</div>
+      <div class="progress-commentary" id="progressCommentary">Let's start with the basics.</div>
+    </div>
+    <div class="progress-right">
+      <span class="progress-count" id="progressCount">Step 1 of 5</span>
+      <div class="progress-pct" id="progressPct">20%</div>
+    </div>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<div class="form-main wizard">
+
+  <!-- STEP 1: YOUR BUSINESS -->
+
+  <div class="step active" id="step-1">
+    <div class="step-eyebrow">Officiant Contract</div>
+    <div class="step-title">Your<br>Business</div>
+    <div class="step-subtitle">This information appears on your contract as the service provider.</div>
+
+```
+<div class="field-row">
+  <div class="field-group">
+    <label for="officiantName">Your Full Name</label>
+    <input type="text" id="officiantName" placeholder="Jane Doe">
+  </div>
+  <div class="field-group">
+    <label for="bizName">Business Name <span class="label-hint">if different</span></label>
+    <input type="text" id="bizName" placeholder="Jane Doe Ceremonies">
+  </div>
+</div>
+<div class="field-row single">
+  <div class="field-group">
+    <label for="officiantEmail">Your Email</label>
+    <input type="email" id="officiantEmail" placeholder="jane@janedoeceremonies.com">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="officiantStreet">Street Address</label>
+    <input type="text" id="officiantStreet" placeholder="123 Main St">
+  </div>
+  <div class="field-group">
+    <label for="officiantApt">Apt / Unit <span class="label-hint">optional</span></label>
+    <input type="text" id="officiantApt" placeholder="Apt 2B">
+  </div>
+</div>
+<div class="field-row third">
+  <div class="field-group">
+    <label for="officiantCity">City</label>
+    <input type="text" id="officiantCity" placeholder="Nashville">
+  </div>
+  <div class="field-group">
+    <label for="officiantAddrState">State</label>
+    <select id="officiantAddrState">
+      <option value="">Select…</option>
+      <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+      <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+      <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+      <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+      <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+      <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+      <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+      <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+      <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+      <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+      <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+      <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+      <option>Wisconsin</option><option>Wyoming</option>
+    </select>
+  </div>
+  <div class="field-group">
+    <label for="officiantZip">Zip Code</label>
+    <input type="text" id="officiantZip" placeholder="37201" maxlength="10">
+  </div>
+</div>
+<div class="field-row single">
+  <div class="field-group">
+    <label for="officiantState">Governing State</label>
+    <select id="officiantState">
+      <option value="">Select state…</option>
+      <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+      <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+      <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+      <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+      <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+      <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+      <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+      <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+      <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+      <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+      <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+      <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+      <option>Wisconsin</option><option>Wyoming</option>
+    </select>
+    <div class="field-note">The state whose laws govern this contract. Usually where you're based.</div>
+  </div>
+</div>
+
+<div class="step-nav">
+  <div class="nav-spacer"></div>
+  <span id="errStep1" class="error-msg">Please fill in all required fields.</span>
+  <button class="btn-next" onclick="goNext(1)">Continue →</button>
+</div>
+```
+
+  </div>
+
+  <!-- STEP 2: CLIENT INFO -->
+
+  <div class="step" id="step-2">
+    <div class="step-eyebrow">Officiant Contract</div>
+    <div class="step-title">Client<br>Info</div>
+    <div class="step-subtitle">Who are you officiating for? This is the couple hiring you.</div>
+
+```
+<div class="field-row">
+  <div class="field-group">
+    <label for="client1">Client 1 — Full Name</label>
+    <input type="text" id="client1" placeholder="Alex Rivera">
+  </div>
+  <div class="field-group">
+    <label for="client2">Client 2 — Full Name</label>
+    <input type="text" id="client2" placeholder="Jordan Rivera">
+  </div>
+</div>
+<div class="field-row single">
+  <div class="field-group">
+    <label for="clientEmail">Client Email</label>
+    <input type="email" id="clientEmail" placeholder="alex@email.com">
+  </div>
+</div>
+
+<div class="field-section">Wedding Details</div>
+
+<div class="field-row">
+  <div class="field-group">
+    <label for="weddingDate">Wedding Date</label>
+    <input type="date" id="weddingDate">
+  </div>
+  <div class="field-group">
+    <label for="ceremonyHour">Ceremony Start Time</label>
+    <div class="time-row">
+      <select id="ceremonyHour">
+        <option value="">Hour</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+        <option>5</option><option>6</option><option>7</option><option>8</option>
+        <option>9</option><option>10</option><option>11</option><option>12</option>
+      </select>
+      <select id="ceremonyMin">
+        <option value="">Min</option>
+        <option>00</option><option>15</option><option>30</option><option>45</option>
+      </select>
+      <select id="ceremonyAmPm">
+        <option value="">—</option>
+        <option>AM</option><option>PM</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="field-row single">
+  <div class="field-group">
+    <label for="venueName">Venue Name</label>
+    <input type="text" id="venueName" placeholder="The Grand Barn at Willow Creek">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="venueStreet">Venue Street Address</label>
+    <input type="text" id="venueStreet" placeholder="456 Venue Rd">
+  </div>
+  <div class="field-group">
+    <label for="venueApt">Suite / Unit <span class="label-hint">optional</span></label>
+    <input type="text" id="venueApt" placeholder="Suite 100">
+  </div>
+</div>
+<div class="field-row third">
+  <div class="field-group">
+    <label for="venueCity">City</label>
+    <input type="text" id="venueCity" placeholder="Nashville">
+  </div>
+  <div class="field-group">
+    <label for="venueAddrState">State</label>
+    <select id="venueAddrState">
+      <option value="">Select…</option>
+      <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+      <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+      <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+      <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+      <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+      <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+      <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+      <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+      <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+      <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+      <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+      <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+      <option>Wisconsin</option><option>Wyoming</option>
+    </select>
+  </div>
+  <div class="field-group">
+    <label for="venueZip">Zip Code</label>
+    <input type="text" id="venueZip" placeholder="37201" maxlength="10">
+  </div>
+</div>
+
+<div class="step-nav">
+  <button class="btn-back" onclick="goBack(2)">← Back</button>
+  <div class="nav-spacer"></div>
+  <span id="errStep2" class="error-msg">Please fill in all required fields.</span>
+  <button class="btn-next" onclick="goNext(2)">Continue →</button>
+</div>
+```
+
+  </div>
+
+  <!-- STEP 3: YOUR SERVICES -->
+
+  <div class="step" id="step-3">
+    <div class="step-eyebrow">Officiant Contract</div>
+    <div class="step-title">Your<br>Services</div>
+    <div class="step-subtitle">What exactly are you providing? Be specific — this is what gets put in the contract.</div>
+
+```
+<div class="field-section">Ceremony Details</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>Ceremony Type</label>
+  <div class="radio-group radio-group-wrap" id="ceremonyTypeWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'ceremonyType','religious')">
+      <input type="radio" name="ceremonyType" value="religious">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Religious</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'ceremonyType','non_religious')">
+      <input type="radio" name="ceremonyType" value="non_religious">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Non-Religious / Secular</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'ceremonyType','spiritual')">
+      <input type="radio" name="ceremonyType" value="spiritual">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Spiritual / Interfaith</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'ceremonyType','civil')">
+      <input type="radio" name="ceremonyType" value="civil">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Civil</span>
+    </label>
+  </div>
+</div>
+
+<div class="field-row">
+  <div class="field-group">
+    <label for="ceremonyLength">Estimated Ceremony Length</label>
+    <input type="text" id="ceremonyLength" placeholder="20–30 minutes">
+    <div class="field-note">Approximate length of the ceremony.</div>
+  </div>
+  <div class="field-group">
+    <label for="rehearsalDate">Rehearsal Date <span class="label-hint">if included</span></label>
+    <input type="date" id="rehearsalDate">
+    <div class="field-note">Leave blank if rehearsal is not included.</div>
+  </div>
+</div>
+
+<div class="field-row single">
+  <div class="field-group">
+    <label for="ceremonyCustomizations">Ceremony Customizations</label>
+    <input type="text" id="ceremonyCustomizations" placeholder="Custom vows, unity ceremony, specific readings">
+    <div class="field-note">Note any specific elements, rituals, or customizations included in the ceremony.</div>
+  </div>
+</div>
+
+<div class="field-section">Legal Filing</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>Marriage License Filing</label>
+  <div class="radio-group radio-group-wrap" id="licenseFilingWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'licenseFiling','officiant')">
+      <input type="radio" name="licenseFiling" value="officiant">
+      <div class="radio-dot"></div>
+      <div>
+        <div class="radio-text">Officiant files the marriage license</div>
+        <div class="radio-sub">Officiant is responsible for signing and returning the license to the appropriate office.</div>
+      </div>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'licenseFiling','couple')">
+      <input type="radio" name="licenseFiling" value="couple">
+      <div class="radio-dot"></div>
+      <div>
+        <div class="radio-text">Couple is responsible for filing</div>
+        <div class="radio-sub">Officiant signs the license but the couple is responsible for filing with the appropriate office.</div>
+      </div>
+    </label>
+  </div>
+</div>
+
+<div class="field-section">Meetings & Preparation</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>Pre-Wedding Consultation</label>
+  <div class="radio-group inline radio-group-wrap" id="consultationWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'consultation','yes')">
+      <input type="radio" name="consultation" value="yes">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Yes, included</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'consultation','no')">
+      <input type="radio" name="consultation" value="no">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Not included</span>
+    </label>
+  </div>
+</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>Rehearsal Attendance</label>
+  <div class="radio-group inline radio-group-wrap" id="rehearsalWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'rehearsal','yes')">
+      <input type="radio" name="rehearsal" value="yes">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Yes, included</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'rehearsal','no')">
+      <input type="radio" name="rehearsal" value="no">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Not included</span>
+    </label>
+  </div>
+</div>
+
+<div class="step-nav">
+  <button class="btn-back" onclick="goBack(3)">← Back</button>
+  <div class="nav-spacer"></div>
+  <span id="errStep3" class="error-msg">Please fill in all required fields.</span>
+  <button class="btn-next" onclick="goNext(3)">Continue →</button>
+</div>
+```
+
+  </div>
+
+  <!-- STEP 4: YOUR POLICIES -->
+
+  <div class="step" id="step-4">
+    <div class="step-eyebrow">Officiant Contract</div>
+    <div class="step-title">Your<br>Policies</div>
+    <div class="step-subtitle">Payment, cancellation, and travel terms. This is where you protect yourself.</div>
+
+```
+<div class="field-section">Payment</div>
+
+<div class="field-row third">
+  <div class="field-group">
+    <label for="retainer">Retainer</label>
+    <input type="number" id="retainer" placeholder="100" min="0">
+    <div class="field-note">Deposit amount due at signing ($).</div>
+  </div>
+  <div class="field-group">
+    <label for="remainingBalance">Remaining Balance</label>
+    <input type="number" id="remainingBalance" placeholder="400" min="0">
+    <div class="field-note">Amount due before the wedding ($).</div>
+  </div>
+  <div class="field-group">
+    <label for="totalPrice">Total Price</label>
+    <input type="number" id="totalPrice" placeholder="500" min="0">
+    <div class="field-note">Full contract amount ($).</div>
+  </div>
+</div>
+<div class="field-row single">
+  <div class="field-group">
+    <label for="balanceDueDays">Balance Due</label>
+    <input type="number" id="balanceDueDays" placeholder="14" min="1">
+    <div class="field-note">How many days before the wedding is the remaining balance due?</div>
+  </div>
+</div>
+
+<div class="field-section">Cancellation</div>
+
+<div class="field-row">
+  <div class="field-group">
+    <label for="lateCancelDays">Late Cancellation Window</label>
+    <input type="number" id="lateCancelDays" placeholder="30" min="1">
+    <div class="field-note">Days before the event that triggers the late-cancel fee.</div>
+  </div>
+  <div class="field-group">
+    <label for="lateCancelFee">Late Cancellation Fee</label>
+    <input type="number" id="lateCancelFee" placeholder="50" min="0" max="100">
+    <div class="field-note">Percentage of total that is kept if client cancels late (%).</div>
+  </div>
+</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>If the wedding can't happen due to events outside anyone's control (force majeure)</label>
+  <div class="radio-group radio-group-wrap" id="forceMajeureWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','refund')">
+      <input type="radio" name="forceMajeure" value="refund">
+      <div class="radio-dot"></div>
+      <div><div class="radio-text">Refund the retainer in full — all amounts paid are returned to the client and no further amounts are owed</div></div>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'forceMajeure','credit')">
+      <input type="radio" name="forceMajeure" value="credit">
+      <div class="radio-dot"></div>
+      <div><div class="radio-text">Apply retainer as credit toward a rescheduled date — all amounts paid are held and applied to a future event, and no further amounts are owed unless a new agreement is signed</div></div>
+    </label>
+  </div>
+</div>
+
+<div class="field-section">Travel</div>
+
+<div class="field-row single">
+  <div class="field-group">
+    <label for="travelThreshold">Travel Fee Threshold</label>
+    <input type="number" id="travelThreshold" placeholder="30" min="0">
+    <div class="field-note">Miles from your location before a travel fee kicks in.</div>
+  </div>
+</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>How Do You Charge for Travel?</label>
+  <div class="radio-group radio-group-wrap" id="travelTypeWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'travelType','per_mile'); toggleConditional('travelPerMile', true); toggleConditional('travelFlat', false)">
+      <input type="radio" name="travelType" value="per_mile">
+      <div class="radio-dot"></div>
+      <div>
+        <div class="radio-text">Per mile</div>
+        <div class="radio-sub">A rate per mile beyond the threshold.</div>
+      </div>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'travelType','flat'); toggleConditional('travelFlat', true); toggleConditional('travelPerMile', false)">
+      <input type="radio" name="travelType" value="flat">
+      <div class="radio-dot"></div>
+      <div>
+        <div class="radio-text">Flat fee</div>
+        <div class="radio-sub">A single flat amount for any travel beyond the threshold.</div>
+      </div>
+    </label>
+  </div>
+  <div class="conditional-field" id="travelPerMile">
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="travelRatePerMile">Rate Per Mile</label>
+        <input type="number" id="travelRatePerMile" placeholder="0.67" min="0" step="0.01">
+        <div class="field-note">Dollars charged per mile beyond your threshold ($).</div>
+      </div>
+    </div>
+  </div>
+  <div class="conditional-field" id="travelFlat">
+    <div class="field-row single">
+      <div class="field-group">
+        <label for="travelFlatFee">Flat Travel Fee</label>
+        <input type="number" id="travelFlatFee" placeholder="75" min="0">
+        <div class="field-note">Flat amount charged for any trip beyond your threshold ($).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field-group" style="margin-bottom: 28px;">
+  <label>Travel Costs Paid By</label>
+  <div class="radio-group inline radio-group-wrap" id="travelCostsWrap" style="margin-top:10px;">
+    <label class="radio-opt" onclick="selectRadio(this,'travelCosts','client')">
+      <input type="radio" name="travelCosts" value="client">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Client</span>
+    </label>
+    <label class="radio-opt" onclick="selectRadio(this,'travelCosts','officiant')">
+      <input type="radio" name="travelCosts" value="officiant">
+      <div class="radio-dot"></div>
+      <span class="radio-text">Officiant</span>
+    </label>
+  </div>
+</div>
+
+<div class="field-section">Jurisdiction</div>
+
+<div class="field-row single">
+  <div class="field-group">
+    <label for="venueCounty">County Where Services Are Rendered</label>
+    <input type="text" id="venueCounty" placeholder="Davidson County">
+    <div class="field-note">This agreement shall be governed by the laws of the state where services are rendered. Jurisdiction and venue shall be proper in the nearest court of this county and state.</div>
+  </div>
+</div>
+
+<div class="step-nav">
+  <button class="btn-back" onclick="goBack(4)">← Back</button>
+  <div class="nav-spacer"></div>
+  <span id="errStep4" class="error-msg">Please fill in all required fields and select all options.</span>
+  <button class="btn-next" onclick="goNext(4)">Continue →</button>
+</div>
+```
+
+  </div>
+
+  <!-- STEP 5: REVIEW & PAY -->
+
+  <div class="step" id="step-5">
+    <div class="step-eyebrow">Officiant Contract</div>
+    <div class="step-title">Review<br>& Pay</div>
+    <div class="step-subtitle">Everything look right? Once you pay, your personalized contract is ready instantly.</div>
+
+```
+<div id="reviewSummary"></div>
+
+<div class="field-section">Signatures</div>
+
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigOfficiantName">Officiant — Printed Name</label>
+    <input type="text" id="sigOfficiantName" placeholder="Jane Doe">
+  </div>
+  <div class="field-group">
+    <label for="sigOfficiantPhone">Officiant — Phone</label>
+    <input type="text" id="sigOfficiantPhone" placeholder="(615) 555-0100">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigClient1Name">Client 1 — Printed Name</label>
+    <input type="text" id="sigClient1Name" placeholder="Alex Rivera">
+  </div>
+  <div class="field-group">
+    <label for="sigClient1Phone">Client 1 — Phone</label>
+    <input type="text" id="sigClient1Phone" placeholder="(615) 555-0101">
+  </div>
+</div>
+<div class="field-row">
+  <div class="field-group">
+    <label for="sigClient2Name">Client 2 — Printed Name</label>
+    <input type="text" id="sigClient2Name" placeholder="Jordan Rivera">
+  </div>
+  <div class="field-group">
+    <label for="sigClient2Phone">Client 2 — Phone</label>
+    <input type="text" id="sigClient2Phone" placeholder="(615) 555-0102">
+  </div>
+</div>
+
+<div class="review-price-block">
+  <div class="review-price-eyebrow">Your Contract</div>
+  <div class="review-price-amount">$19.99</div>
+  <div class="review-price-note">One-time · Instant download · Yours forever</div>
+  <ul class="review-features">
+    <li>Fully personalized to your business</li>
+    <li>Attorney-reviewed contract language</li>
+    <li>Governing law for your state</li>
+    <li>Print or send digitally</li>
+    <li>Wedding-specific legal clauses</li>
+  </ul>
+</div>
+
+<div class="disclaimer">
+  This contract was generated via IvoryClause (ivoryclause.com). IvoryClause is a document generation platform and is not a party to this Agreement. IvoryClause does not provide legal advice, does not represent either party, and is not responsible for the enforcement, validity, or outcome of any agreement entered into using this template. Users are encouraged to consult a licensed attorney before signing.
+</div>
+
+<div class="step-nav">
+  <button class="btn-back" onclick="goBack(5)">← Back</button>
+  <div class="nav-spacer"></div>
+  <button class="btn-pay" onclick="submitForm()">Pay $19.99 — Download Instantly</button>
+</div>
+```
+
+  </div>
+
+</div>
+
+<script>
+var currentStep = 1;
+var totalSteps  = 5;
+
+var stepData = [
+  { label: 'Your Business',  commentary: 'Let\'s start with the basics.',             pct: 20  },
+  { label: 'Client Info',    commentary: 'Almost halfway there.',                     pct: 40  },
+  { label: 'Your Services',  commentary: 'You\'re more than halfway done.',           pct: 60  },
+  { label: 'Your Policies',  commentary: 'Almost there — just your policies left.',   pct: 80  },
+  { label: 'Review & Pay',   commentary: 'You\'re done — let\'s get you paid!',      pct: 100 }
+];
+
+function updateProgress(step) {
+  var d = stepData[step - 1];
+  document.getElementById('progressLabel').textContent      = d.label;
+  document.getElementById('progressCommentary').textContent = d.commentary;
+  document.getElementById('progressCount').textContent      = 'Step ' + step + ' of ' + totalSteps;
+  document.getElementById('progressPct').textContent        = d.pct + '%';
+  document.getElementById('progressFill').style.width       = d.pct + '%';
+}
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('step-' + n).classList.add('active');
+  currentStep = n;
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (n === 5) buildReview();
+}
+
+function goNext(from) { if (!validateStep(from)) return; showStep(from + 1); }
+function goBack(from) { showStep(from - 1); }
+
+function selectRadio(el, name, val) {
+  document.querySelectorAll('[name="' + name + '"]').forEach(function(r) {
+    r.closest('.radio-opt').classList.remove('selected');
+  });
+  el.classList.add('selected');
+  el.querySelector('input[type="radio"]').checked = true;
+  var wrap = el.closest('.radio-group-wrap');
+  if (wrap) wrap.classList.remove('error');
+}
+
+function toggleConditional(id, show) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  show ? el.classList.add('visible') : el.classList.remove('visible');
+}
+
+function rv(id)   { var e = document.getElementById(id); return e ? e.value.trim() : ''; }
+function rvr(name){ var c = document.querySelector('[name="' + name + '"]:checked'); return c ? c.value : ''; }
+function rvLabel(name) {
+  var c = document.querySelector('[name="' + name + '"]:checked');
+  if (!c) return '—';
+  var t = c.closest('.radio-opt').querySelector('.radio-text');
+  return t ? t.textContent.trim() : c.value;
+}
+function officiantAddressFull() {
+  var parts = [rv('officiantStreet')];
+  if (rv('officiantApt')) parts[0] += ' ' + rv('officiantApt');
+  parts.push(rv('officiantCity'));
+  parts.push(rv('officiantAddrState') + ' ' + rv('officiantZip'));
+  return parts.filter(Boolean).join(', ');
+}
+function venueAddressFull() {
+  var parts = [rv('venueStreet')];
+  if (rv('venueApt')) parts[0] += ' ' + rv('venueApt');
+  parts.push(rv('venueCity'));
+  parts.push(rv('venueAddrState') + ' ' + rv('venueZip'));
+  return parts.filter(Boolean).join(', ');
+}
+function ceremonyTime() {
+  var h = rv('ceremonyHour'), m = rv('ceremonyMin'), a = rv('ceremonyAmPm');
+  if (!h || !m || !a) return '';
+  return h + ':' + m + ' ' + a;
+}
+
+function markField(id, ok) {
+  var e = document.getElementById(id);
+  if (!e) return;
+  ok ? e.classList.remove('error') : e.classList.add('error');
+  return ok;
+}
+function checkRequired(ids) {
+  var ok = true;
+  ids.forEach(function(id) { if (!markField(id, !!rv(id))) ok = false; });
+  return ok;
+}
+function checkRadios(names) {
+  var ok = true;
+  names.forEach(function(name) {
+    if (!rvr(name)) {
+      var wrap = document.getElementById(name + 'Wrap');
+      if (wrap) wrap.classList.add('error');
+      ok = false;
+    }
+  });
+  return ok;
+}
+
+function validateStep(step) {
+  var ok = true;
+  var errEl = document.getElementById('errStep' + step);
+  if (errEl) errEl.classList.remove('visible');
+  if (step === 1) {
+    ok = checkRequired(['officiantName','officiantEmail','officiantStreet','officiantCity','officiantAddrState','officiantZip','officiantState']);
+  }
+  if (step === 2) {
+    ok = checkRequired(['client1','client2','clientEmail','weddingDate','venueName','venueStreet','venueCity','venueAddrState','venueZip']);
+    if (!ceremonyTime()) { ok = false; }
+  }
+  if (step === 3) {
+    ok = checkRequired(['ceremonyLength','ceremonyCustomizations']) && ok;
+    ok = checkRadios(['ceremonyType','licenseFiling','consultation','rehearsal']) && ok;
+  }
+  if (step === 4) {
+    ok = checkRequired(['retainer','remainingBalance','totalPrice','balanceDueDays','lateCancelDays','lateCancelFee','travelThreshold','venueCounty']) && ok;
+    ok = checkRadios(['forceMajeure','travelType','travelCosts']) && ok;
+    if (rvr('travelType') === 'per_mile') ok = checkRequired(['travelRatePerMile']) && ok;
+    if (rvr('travelType') === 'flat')     ok = checkRequired(['travelFlatFee']) && ok;
+  }
+  if (step === 5) {
+    ok = checkRequired(['sigOfficiantName','sigOfficiantPhone','sigClient1Name','sigClient1Phone','sigClient2Name','sigClient2Phone']) && ok;
+  }
+  if (!ok && errEl) errEl.classList.add('visible');
+  return ok;
+}
+
+function rGroup(label, items, step) {
+  var editBtn = step ? '<button onclick="showStep(' + step + ')" style="font-family:\'Inter\',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;background:none;border:1px solid rgba(26,26,26,0.15);padding:4px 12px;cursor:pointer;color:#1a1a1a;margin-left:auto;">Edit</button>' : '';
+  var html = '<div class="review-group"><div class="review-group-label" style="display:flex;align-items:center;">' + label + editBtn + '</div><div class="review-items">';
+  items.filter(Boolean).forEach(function(item) {
+    var val = item[1] || '—';
+    var empty = !item[1] || item[1] === '—';
+    html += '<div class="review-item"><div class="review-item-label">' + item[0] + '</div>';
+    html += '<div class="review-item-value' + (empty ? ' empty' : '') + '">' + val + '</div></div>';
+  });
+  html += '</div></div>';
+  return html;
+}
+
+function travelFeeStr() {
+  var t = rvr('travelType');
+  if (t === 'per_mile') return '$' + rv('travelRatePerMile') + ' per mile';
+  if (t === 'flat')     return '$' + rv('travelFlatFee') + ' flat fee';
+  return '—';
+}
+
+function buildReview() {
+  var html = '';
+  html += rGroup('Your Business', [
+    ['Name', rv('officiantName')],
+    ['Business', rv('bizName') || rv('officiantName')],
+    ['Email', rv('officiantEmail')],
+    ['Address', officiantAddressFull()],
+    ['Governing State', rv('officiantState')]
+  ], 1);
+  html += rGroup('Client Info', [
+    ['Client 1', rv('client1')],
+    ['Client 2', rv('client2')],
+    ['Client Email', rv('clientEmail')],
+    ['Wedding Date', rv('weddingDate')],
+    ['Ceremony Time', ceremonyTime()],
+    ['Venue', rv('venueName')],
+    ['Venue Address', venueAddressFull()]
+  ], 2);
+  html += rGroup('Your Services', [
+    ['Ceremony Type', rvLabel('ceremonyType')],
+    ['Ceremony Length', rv('ceremonyLength')],
+    ['Customizations', rv('ceremonyCustomizations')],
+    rv('rehearsalDate') ? ['Rehearsal Date', rv('rehearsalDate')] : null,
+    ['License Filing', rvLabel('licenseFiling')],
+    ['Consultation', rvLabel('consultation')],
+    ['Rehearsal', rvLabel('rehearsal')]
+  ], 3);
+  html += rGroup('Your Policies', [
+    ['Retainer', '$' + rv('retainer')],
+    ['Remaining Balance', '$' + rv('remainingBalance')],
+    ['Total', '$' + rv('totalPrice')],
+    ['Balance Due', rv('balanceDueDays') + ' days before wedding'],
+    ['Late Cancel Window', rv('lateCancelDays') + ' days'],
+    ['Late Cancel Fee', rv('lateCancelFee') + '%'],
+    ['Force Majeure', rvLabel('forceMajeure')],
+    ['Travel Threshold', rv('travelThreshold') + ' miles'],
+    ['Travel Fee', travelFeeStr()],
+    ['Travel Costs', rvLabel('travelCosts')],
+    ['Jurisdiction', rv('venueCounty')]
+  ], 4);
+  html += rGroup('Signatures', [
+    ['Officiant', rv('sigOfficiantName')],
+    ['Officiant Phone', rv('sigOfficiantPhone')],
+    ['Client 1', rv('sigClient1Name')],
+    ['Client 1 Phone', rv('sigClient1Phone')],
+    ['Client 2', rv('sigClient2Name')],
+    ['Client 2 Phone', rv('sigClient2Phone')]
+  ]);
+  document.getElementById('reviewSummary').innerHTML = html;
+}
+
+function submitForm() {
+  var data = {
+    officiantName: rv('officiantName'), bizName: rv('bizName') || rv('officiantName'),
+    officiantEmail: rv('officiantEmail'), officiantAddress: officiantAddressFull(),
+    officiantState: rv('officiantState'), client1: rv('client1'), client2: rv('client2'),
+    clientEmail: rv('clientEmail'), weddingDate: rv('weddingDate'),
+    ceremonyTime: ceremonyTime(), venueName: rv('venueName'), venueAddress: venueAddressFull(),
+    ceremonyType: rvr('ceremonyType'), ceremonyLength: rv('ceremonyLength'),
+    ceremonyCustomizations: rv('ceremonyCustomizations'), rehearsalDate: rv('rehearsalDate'),
+    licenseFiling: rvr('licenseFiling'), consultation: rvr('consultation'), rehearsal: rvr('rehearsal'),
+    retainer: rv('retainer'), remainingBalance: rv('remainingBalance'),
+    totalPrice: rv('totalPrice'), balanceDueDays: rv('balanceDueDays'),
+    lateCancelDays: rv('lateCancelDays'), lateCancelFee: rv('lateCancelFee'),
+    forceMajeure: rvr('forceMajeure'), travelThreshold: rv('travelThreshold'),
+    travelType: rvr('travelType'),
+    travelFee: rvr('travelType') === 'per_mile' ? rv('travelRatePerMile') : rv('travelFlatFee'),
+    travelCosts: rvr('travelCosts'), venueCounty: rv('venueCounty'),
+    sigOfficiantName: rv('sigOfficiantName'), sigOfficiantPhone: rv('sigOfficiantPhone'),
+    sigClient1Name: rv('sigClient1Name'), sigClient1Phone: rv('sigClient1Phone'),
+    sigClient2Name: rv('sigClient2Name'), sigClient2Phone: rv('sigClient2Phone')
+  };
+  fetch('/.netlify/functions/create-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ contractType: 'officiant', formData: data })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) { if (d.url) window.location.href = d.url; })
+  .catch(function() { alert('Something went wrong. Please try again.'); });
+}
+
+updateProgress(1);
+</script>
+
+</body>
+</html>
