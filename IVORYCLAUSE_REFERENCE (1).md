@@ -168,3 +168,29 @@ BROWSERLESS_API_KEY
 **Problem:** Adding `<!DOCTYPE html>`, `<head>`, and `<meta>` tags to email HTML triggers spam filters.
 
 **Fix:** Keep email HTML as a bare table only — no doctype, no head, no meta tags. Start directly with the outer `<table>` element. Resend wraps it appropriately on their end.
+
+### 🔴 Apple Mail dark mode overriding cream background
+**Problem:** Apple Mail ignores `background-color` and flips the email dark when the user has dark mode on.
+
+**Fix:** Add `color-scheme` and `supported-color-schemes` directly on the outer table element (not in a style tag or head):
+```html
+<table bgcolor="#f5f0e8" style="background-color:#f5f0e8; color-scheme:light only; supported-color-schemes:light only;">
+```
+Also add `!important` to every `td` background:
+```html
+<td bgcolor="#f5f0e8" style="background-color:#f5f0e8 !important;">
+```
+
+### 🔴 Waitlist email landing in junk/spam
+**Problem:** New sending domain + no unsubscribe header = spam filters flag it.
+
+**Fix:** Add `List-Unsubscribe` header to the Resend send call AND add a preheader text block at the top of the HTML:
+```js
+headers: {
+  'List-Unsubscribe': '<mailto:hello@ivoryclause.com?subject=unsubscribe>'
+}
+```
+```html
+<!-- Preheader text — hidden but read by spam filters -->
+<div style="display:none;max-height:0;overflow:hidden;">You're on the IvoryClause waitlist. We'll let you know when we go live.</div>
+```
