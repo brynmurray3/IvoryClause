@@ -14,23 +14,34 @@ exports.handler = async (event) => {
       from: 'IvoryClause <hello@ivoryclause.com>',
       to: email,
       subject: "You're on the list.",
+      headers: {
+        'List-Unsubscribe': '<mailto:hello@ivoryclause.com?subject=unsubscribe>'
+      },
       html: `
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f0e8" style="background-color:#f5f0e8;">
+        <div style="display:none;max-height:0;overflow:hidden;">You're on the IvoryClause waitlist. We'll let you know when we go live.</div>
+        <div style="display:none;max-height:0;overflow:hidden;">&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+          bgcolor="#f5f0e8"
+          style="background-color:#f5f0e8; color-scheme:light only; supported-color-schemes:light only;">
           <tr>
             <td align="center" bgcolor="#f5f0e8" style="background-color:#f5f0e8; padding:40px 16px;">
 
-              <table width="560" cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f0e8" style="max-width:560px; width:100%; background-color:#f5f0e8;">
+              <table width="560" cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f0e8"
+                style="max-width:560px; width:100%; background-color:#f5f0e8;">
 
                 <!-- HEADER -->
                 <tr>
-                  <td bgcolor="#f5f0e8" style="background-color:#f5f0e8; padding:28px 40px; border-bottom:1px solid #d9d4cc; text-align:center;">
+                  <td bgcolor="#f5f0e8"
+                    style="background-color:#f5f0e8 !important; padding:28px 40px; border-bottom:1px solid #d9d4cc; text-align:center;">
                     <span style="font-family:Arial,sans-serif; font-size:13px; font-weight:900; letter-spacing:0.22em; text-transform:uppercase; color:#1a1a1a;">IVORYCLAUSE</span>
                   </td>
                 </tr>
 
                 <!-- BODY -->
                 <tr>
-                  <td bgcolor="#f5f0e8" style="background-color:#f5f0e8; padding:48px 40px 28px;">
+                  <td bgcolor="#f5f0e8"
+                    style="background-color:#f5f0e8 !important; padding:48px 40px 28px;">
                     <h1 style="font-family:Arial,sans-serif; font-size:38px; font-weight:900; text-transform:uppercase; color:#e8000d; margin:0 0 28px 0; letter-spacing:-0.02em; line-height:1.05;">You're on<br>the list.</h1>
                     <p style="font-family:Georgia,serif; font-size:16px; font-style:italic; line-height:1.9; color:#1a1a1a; margin:0 0 20px 0;">
                       We're putting the finishing touches on IvoryClause — attorney-reviewed contracts built for wedding professionals.
@@ -46,7 +57,8 @@ exports.handler = async (event) => {
 
                 <!-- FOOTER -->
                 <tr>
-                  <td bgcolor="#f5f0e8" style="background-color:#f5f0e8; padding:24px 40px 40px; border-top:1px solid #d9d4cc;">
+                  <td bgcolor="#f5f0e8"
+                    style="background-color:#f5f0e8 !important; padding:24px 40px 40px; border-top:1px solid #d9d4cc;">
                     <p style="font-family:Arial,sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9e9890; line-height:1.9; margin:0;">
                       IvoryClause &nbsp;&middot;&nbsp; <a href="https://ivoryclause.com" style="color:#9e9890; text-decoration:none;">ivoryclause.com</a><br>
                       We did the legal homework so you don't have to.
